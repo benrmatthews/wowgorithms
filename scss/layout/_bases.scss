@@ -1,3 +1,14 @@
+::-moz-selection {
+  background-color: $maincolor;
+  color: white;
+}
+
+::selection {
+  background-color: $maincolor;
+  color: white;
+}
+
+
 .centered {
 	max-width: $screen-lg;
 	margin: 0 auto;

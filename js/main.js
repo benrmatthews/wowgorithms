@@ -35,7 +35,7 @@ $(document).ready(function() {
 		$('.grid__block').each(function() {
 			var brand = $(this).find(".grid__block-title").text().toLowerCase();
 			var brandTags = $(this).attr('data-tags');
-			if ((brand.indexOf(searchterm) == 0) || (brandTags.indexOf(searchterm)) == 0)  {
+			if ((brand.indexOf(searchterm) >= 0) || (brandTags.indexOf(searchterm)) >= 0)  {
 				$(this).show();
 			} else {
 				$(this).hide();

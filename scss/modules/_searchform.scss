@@ -33,5 +33,17 @@
 		.header__category {
 			display: none;
 		}
+
+		.grid__block {
+			&:nth-child(2n+1) {
+				clear: none;
+			}
+			&:nth-child(3n+1) {
+				clear: none;
+			}
+			&:nth-child(4n+1) {
+				clear: none;
+			}
+		}
 	}
 }
