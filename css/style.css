@@ -1454,7 +1454,8 @@ hr {
   top: 0;
   left: 0;
   z-index: 10;
-  width: 100%; }
+  width: 100%;
+  height: 0; }
   @media (max-width: 768px) {
     .mainmenu {
       left: 100%; } }
@@ -1491,6 +1492,9 @@ hr {
     color: #7C738C;
     font-size: 1.125em;
     margin-bottom: 1em; }
+
+.sidebar__wrapper {
+  height: 0; }
 
 .sidebar__container {
   -webkit-transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
@@ -1667,16 +1671,30 @@ hr {
     min-height: 1px;
     padding-left: 20px;
     padding-right: 20px;
+    clear: both;
     margin-bottom: 40px; }
     @media (min-width: 480px) {
       .grid__block {
-        width: 50%; } }
+        width: 50%;
+        clear: none; }
+        .grid__block:nth-child(2n+1) {
+          clear: left; } }
     @media (min-width: 768px) {
       .grid__block {
-        width: 33.33333%; } }
+        width: 33.33333%; }
+        .grid__block:nth-child(2n+1) {
+          clear: none; }
+        .grid__block:nth-child(3n+1) {
+          clear: left; } }
     @media (min-width: 920px) {
       .grid__block {
-        width: 25%; } }
+        width: 25%; }
+        .grid__block:nth-child(2n+1) {
+          clear: none; }
+        .grid__block:nth-child(3n+1) {
+          clear: none; }
+        .grid__block:nth-child(4n+1) {
+          clear: left; } }
     .grid__block > a {
       display: block;
       width: 100%;
@@ -1724,9 +1742,11 @@ hr {
         font-size: 1em;
         text-align: left;
         font-weight: 400;
-        float: left; }
+        float: left;
+        width: 70%; }
         .grid__block-infos h2 a {
-          text-decoration: none; }
+          text-decoration: none;
+          color: currentColor; }
       .grid__block-infos .views {
         float: right;
         font-size: 0.875em;
@@ -1740,6 +1760,26 @@ hr {
           background: url(../img/icon-views.svg) center no-repeat;
           background-size: contain;
           margin-right: .5em; }
+    .grid__block .color {
+      position: absolute;
+      bottom: 1em;
+      left: 50%;
+      margin-left: -35px;
+      width: 70px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 2em;
+      font-size: 0.75em;
+      color: white;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 2px 10px;
+      font-weight: lighter; }
+      .grid__block .color::selection {
+        background-color: #453C55;
+        color: white; }
+      .grid__block .color::-moz-selection {
+        background-color: #453C55;
+        color: white; }
 
 .tag {
   background-color: #EFEFEF;

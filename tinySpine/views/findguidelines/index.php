@@ -63,7 +63,7 @@ function hex2rgb($hex) {
     <nav class="mainmenu">
       <span></span>
       <div class="sidebar__wrapper">
-      
+
         <button id="access-trigger" role="widget" class="access-trigger">
           <div>
             <span class="bun"></span>
@@ -125,10 +125,10 @@ function hex2rgb($hex) {
   <div class="row">
     <ul class="grid">
     <?php foreach($brands as $brand): ?>
-      <li class="grid__block" data-tags="<?= $brand->tags ?>">
+      <li class="grid__block" data-tags="<?= $brand->tags ?>" style="color: #<?= $brand->brandColor ?>">
         <div class="grid__block-wrappercontent">
-            <a href="<?= BASEURL.$brand->slug ?>" target="_blank">
-              <div class="grid__block-container" style="background-color: #<?= $brand->brandColor ?>">
+            <div class="grid__block-container" style="background-color: #<?= $brand->brandColor ?>">
+              <a href="<?= BASEURL.$brand->slug ?>" target="_blank">
                 <div class="grid__block-wrapper">
                   <div class="grid__block-centered">
                     <div>
@@ -136,11 +136,12 @@ function hex2rgb($hex) {
                     </div>
                   </div>
                 </div>
-              </div>
-            </a>
+              </a>
+              <span class="color">#<?= $brand->brandColor ?></span>
+            </div>
             <div class="grid__block-infos" style="border-color: rgba(<?= hex2rgb("#".$brand->brandColor) ?>, .19)">
                 <header>
-                <h2 class="grid__block-title"><a href="<?= BASEURL.$brand->slug ?>" target="_blank" style="color: #<?= $brand->brandColor ?>"><?= $brand->name ?></a></h2>
+                <h2 class="grid__block-title"><a href="<?= BASEURL.$brand->slug ?>" target="_blank"><?= $brand->name ?></a></h2>
                 <div class="views">
                     <?php if ($brand->clicksCount) { echo $brand->clicksCount; } else { echo "0"; } ?></div>
                 </header>

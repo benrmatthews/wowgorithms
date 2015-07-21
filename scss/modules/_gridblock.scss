@@ -4,20 +4,41 @@
 	list-style: none;
 
 	&__block {
+
 		@include make-xs-column(20);
-		
+		clear: both;
 		@media (min-width: 480px) {
 			width: 50%;
+			clear: none;
+			&:nth-child(2n+1) {
+				clear: left;
+			}
 		}
 		@media (min-width: 768px) {
 			width: (100%/3);
+			&:nth-child(2n+1) {
+				clear: none;
+			}
+			&:nth-child(3n+1) {
+				clear: left;
+			}
 		}
 		@media (min-width: 920px) {
 			width: 25%;
+			&:nth-child(2n+1) {
+				clear: none;
+			}
+			&:nth-child(3n+1) {
+				clear: none;
+			}
+			&:nth-child(4n+1) {
+				clear: left;
+			}
 		}
 
 		@media (min-width: 1023px) {
 			//width: 20%;
+
 		}
 
 		margin-bottom: $grid-gutter-width;
@@ -89,9 +110,11 @@
 				text-align: left;
 				font-weight: 400;
 				float: left;
+				width: 70%;
 
 				a {
 					text-decoration: none;
+					color: currentColor;
 				}
 			}
 
@@ -114,5 +137,32 @@
 			}
 			
 		}
+
+		.color {
+			position: absolute;
+			bottom: 1em;
+			left: 50%;
+			margin-left: -35px;
+			width: 70px;
+			background: rgba(0,0,0,.2);
+			border-radius: 2em;
+			@include pxem(12px);
+			color: white;
+			text-align: center;
+			text-transform: uppercase;
+			padding: 2px 10px;
+			font-weight: lighter;
+
+			&::selection {
+				background-color: $text-color;
+				color: white;
+			}
+
+			&::-moz-selection {
+				background-color: $text-color;
+				color: white;
+			}
+		}
+		
 	}
 }

@@ -20,7 +20,8 @@ $(document).ready(function() {
 			setTimeout(function(){
 				$("body").removeClass("isSearching");
 	        },200);
-				$("#searchform-input").focusout();
+			$('#searchform-input').val("");
+			$('.grid__block').show();
 		}
 	})
 
@@ -40,6 +41,22 @@ $(document).ready(function() {
 				$(this).hide();
 			}
 		});
+	})
+
+	$(".color").on("click", function() {
+
+		if (document.body.createTextRange) {
+	        range = document.body.createTextRange();
+	        range.moveToElementText(this);
+	        range.select();
+	    } else if (window.getSelection) {
+	        selection = window.getSelection();        
+	        range = document.createRange();
+	        range.selectNodeContents(this);
+	        selection.removeAllRanges();
+	        selection.addRange(range);
+	    }
+
 	})
 
 });
