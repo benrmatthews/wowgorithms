@@ -1,13 +1,12 @@
 .mainmenu {
-	position: relative;
+	position: fixed;
+	top: 0;
+	left: 0;
 	z-index: 10;
+	width: 100%;
 	
 	@media (max-width: $screen-sm) {
-		position: fixed;
-		top: 0;
 		left: 100%;
-		z-index: 10;
-		
 	}
 
 	a {

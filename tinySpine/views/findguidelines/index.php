@@ -62,43 +62,46 @@ function hex2rgb($hex) {
     </section>
     <nav class="mainmenu">
       <span></span>
-      <div class="sidebar__container">
-        <div class="sidebar__container-overflow">
-          <button class="btn btn-add">Add a guideline</button>
-        
-          <div class="sub-sidebar">
-            <div class="sub-sidebar__container">
-              <div class="sub-sidebar__container-overflow">
-                <div class="about">
-                  <h1>Ahoy fellow designers&nbsp;!</h1>
-                  <p>FindGuidelin.es is a simple one-page website where you can find easily and quickly the web guidelines from the most famous brands, especially social networks. It's a small collaborative project, so don't hesitate to submit yours.</p>
-                </div>
-                <div class="log">
-                <h2>Last updates</h2>
-                  <ul class="log__list">
-                  <?php for ($i=0; $i<20; $i++) { ?>
-                    <li class="log__list-item">
-                      Machin was added.
-                      <strong>Added on 3rd July 2015</strong>
-                    </li>
-                  <?php } ?>
-                  </ul>
+      <div class="sidebar__wrapper">
+      
+        <button id="access-trigger" role="widget" class="access-trigger">
+          <div>
+            <span class="bun"></span>
+            <span class="burger"></span>
+            <span class="bun"></span>
+          </div>
+        </button>
+
+        <div class="sidebar__container">
+          <div class="sidebar__container-overflow">
+            <button class="btn btn-add">Add a guideline</button>
+          
+            <div class="sub-sidebar">
+              <div class="sub-sidebar__container">
+                <div class="sub-sidebar__container-overflow">
+                  <div class="about">
+                    <h1>Ahoy fellow designers&nbsp;!</h1>
+                    <p>FindGuidelin.es is a simple one-page website where you can find easily and quickly the web guidelines from the most famous brands, especially social networks. It's a small collaborative project, so don't hesitate to submit yours.</p>
+                  </div>
+                  <div class="log">
+                  <h2>Last updates</h2>
+                    <ul class="log__list">
+                    <?php for ($i=0; $i<20; $i++) { ?>
+                      <li class="log__list-item">
+                        Machin was added.
+                        <strong>Added on 3rd July 2015</strong>
+                      </li>
+                    <?php } ?>
+                    </ul>
+                  </div>
                 </div>
               </div>
+              
             </div>
-            
           </div>
         </div>
       </div>
       
-      <button id="access-trigger" role="widget" class="access-trigger">
-        <div>
-          <span class="bun"></span>
-          <span class="burger"></span>
-          <span class="bun"></span>
-        </div>
-      </button>
-
     </nav>
   </div> 
 </header>
@@ -137,7 +140,7 @@ function hex2rgb($hex) {
             </a>
             <div class="grid__block-infos" style="border-color: rgba(<?= hex2rgb("#".$brand->brandColor) ?>, .19)">
                 <header>
-                <h2><a href="<?= BASEURL.$brand->slug ?>" target="_blank" style="color: #<?= $brand->brandColor ?>"><?= $brand->name ?></a></h2>
+                <h2 class="grid__block-title"><a href="<?= BASEURL.$brand->slug ?>" target="_blank" style="color: #<?= $brand->brandColor ?>"><?= $brand->name ?></a></h2>
                 <div class="views">
                     <?php if ($brand->clicksCount) { echo $brand->clicksCount; } else { echo "0"; } ?></div>
                 </header>

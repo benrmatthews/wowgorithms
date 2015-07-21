@@ -1,6 +1,10 @@
 .sidebar {
-
+	
+	&__wrapper {
+		@extend .centered;
+	}
 	&__container {
+
 		@media (max-width: $screen-sm) {
 			position: fixed;
 			top: 0;
@@ -13,8 +17,7 @@
 			margin-right: 0;
 		}
 		
-		float: left;
-		margin-right: 1em;
+		
 
 		@include transition(all .3s cubic-bezier(0.19, 1, 0.22, 1));
 

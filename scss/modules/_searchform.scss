@@ -20,3 +20,18 @@
 		background-size: contain;
 	}
 }
+
+.isSearching {
+
+	.maincontent {
+		.row {
+			&::before, &::after {
+				content: none; 
+			}
+		}
+
+		.header__category {
+			display: none;
+		}
+	}
+}
