@@ -1,0 +1,129 @@
+.sidebar {
+
+	&__container {
+		@media (max-width: $screen-sm) {
+			position: fixed;
+			top: 0;
+			right: -90%;
+			width: 90%;
+			height: 100%;
+			background-color: #fff;
+			padding: 1.5em 2em;
+			overflow: auto;
+			margin-right: 0;
+		}
+		
+		float: left;
+		margin-right: 1em;
+
+		@include transition(all .3s cubic-bezier(0.19, 1, 0.22, 1));
+
+		.btn-add {
+			display: block;
+			width: 80%;
+
+			@media (min-width: $screen-sm) {
+				width: auto;
+				float: right;
+			}
+
+			&:before {
+				content: "";
+				width: 0.8em;
+				height: 0.8em;
+				display: inline-block;
+				margin-right: .6em;
+				background: url(../img/icon-add.svg) no-repeat;
+				background-size: contain;
+			}
+		}
+
+		.open-sidebar & {
+			right: 0;
+		}
+
+		
+	}
+
+}
+
+.sub-sidebar {
+	
+	@media (min-width: $screen-sm) {
+		&__container {
+			position: fixed;
+			top: 0;
+			z-index: 10;
+			right: -40%;
+			width: 40%;
+			height: 100%;
+			background-color: #fff;
+			overflow: auto;
+			padding: 1.5em 2em;
+
+			@include transition(all .3s cubic-bezier(0.19, 1, 0.22, 1));
+
+			.open-sidebar & {
+				right: 0;
+			}
+			
+		}
+	}
+
+	@media (min-width: $screen-lg) {
+		&__container {
+			padding: 1.5em 9.722222% 2em 2em;
+		}
+	}
+}
+
+.about {
+	margin-top: 2em;
+	padding-top: 2em;
+	margin-bottom: 3em;
+	padding-bottom: 1em;
+	border-bottom: 3px double #E6E2E9;
+	h1 {
+		line-height: 1;
+		margin: 0; 
+		color: $maincolor;
+	}
+
+	p {
+		font-weight: lighter;
+		@include pxem(18px);
+		line-height: 1.6;
+	}
+}
+
+.log {
+	
+	h2 {
+		@include pxem(12px);
+		text-transform: uppercase;
+		font-weight: bolder;
+		color: $maincolor;
+	}
+
+	&__list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		&-item {
+			padding: 1em 0;
+
+			+ .log__list-item {
+				border-top: 1px solid #E6E2E9;
+			}
+
+			strong {
+				display: block;
+				text-transform: uppercase;
+				@include pxem(11px);
+				font-weight: bold;
+				opacity: .6;
+			}
+		}
+	}
+}

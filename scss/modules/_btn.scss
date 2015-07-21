@@ -1,0 +1,20 @@
+.btn {
+	background-color: $maincolor;
+	border: none;
+	padding: 1em 2em;
+	text-transform: uppercase;
+	@include pxem(12px); 
+	color: white;
+	border-radius: 2em;
+	outline: none;
+
+	@include transition(background-color .3s ease);
+
+	&:hover {
+		background-color: lighten($maincolor, 5%);
+	}
+
+	&:active, &:focus {
+		background-color: darken($maincolor, 10%);
+	}
+}

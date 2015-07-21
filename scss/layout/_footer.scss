@@ -1,0 +1,39 @@
+.mainfooter {
+	@extend .centered;
+	background-color: $body-bg;
+	
+
+	&__wrapper {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		
+	}
+
+	&__container {
+		border-top: 1px solid #EDECE7;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		@extend .clearfix;
+	}
+
+	.copyright {
+		float: left;
+		margin: 0;
+		text-transform: uppercase;
+		@include pxem(12px);
+		color: #B7B6B2;
+
+		a {
+			color: $text-color;
+			border-bottom: 1px solid transparent;
+			@include transition(border-color .3s ease);
+
+			&:hover {
+				text-decoration: none;
+				border-bottom: 1px solid;
+			}
+		}
+	}
+}

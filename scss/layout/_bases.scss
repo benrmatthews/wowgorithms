@@ -1,0 +1,37 @@
+.centered {
+	max-width: $screen-lg;
+	margin: 0 auto;
+	@extend .container-fluid;
+}
+
+.open-sidebar {
+	overflow: hidden;
+}
+
+@mixin keyframes($animationName)
+{
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName}  {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@include keyframes(bgcolor) {
+  0% {
+    background-color: #ffccf2;
+  }
+  50% {
+    background-color: #ccffcc;
+  }
+  100% {
+    background-color: #ccffff;
+  } 
+}

@@ -1,0 +1,22 @@
+.tag {
+	background-color: #EFEFEF;
+	padding: .5em 1em;
+	margin: 0 .2em .2em 0;
+	border-radius: 2em;
+	@include pxem(10px);
+	color: #AEAAB7;
+	text-transform: uppercase;
+	display: inline-block;
+
+	@include transition(all .3s ease);
+
+	&:hover, &:focus {
+		background-color: darken(#EFEFEF, 5%);
+		text-decoration: none;
+		color: $text-color;
+	}
+}
+
+.tags {
+	margin-top: 1em;
+}

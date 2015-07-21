@@ -1,0 +1,4 @@
+@mixin pxem($fz, $fz-base: $font-size-base) {
+	$pxem: $fz / $fz-base;
+	font-size: #{$pxem}em;
+}

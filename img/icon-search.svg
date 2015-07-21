@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-search</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop-HD" sketch:type="MSArtboardGroup" transform="translate(-102.000000, -130.000000)">
+            <g id="submenu" sketch:type="MSLayerGroup" transform="translate(100.000000, 104.000000)">
+                <g id="search" transform="translate(0.000000, 24.000000)" sketch:type="MSShapeGroup">
+                    <g id="icon-search" transform="translate(12.500000, 13.000000) rotate(-315.000000) translate(-12.500000, -13.000000) translate(2.000000, 6.000000)">
+                        <circle id="Oval-1" stroke="#453C55" stroke-width="2" cx="7" cy="7" r="7"></circle>
+                        <rect id="Rectangle-6" fill="#453C55" x="13" y="6" width="7.5" height="2"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

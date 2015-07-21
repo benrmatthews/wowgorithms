@@ -1,0 +1,12 @@
+.share-module {
+	float: right;
+
+	> div {
+		float: left;
+		margin-left: 1em;
+	}
+
+	.fb_iframe_widget span {
+		vertical-align: top !important;
+	}
+}

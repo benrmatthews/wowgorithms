@@ -1,0 +1,26 @@
+{
+  "name": "findguidelines",
+  "version": "1.0.0",
+  "description": "1) Backup ALL files on your server. 2) Backup your database. 3) Update tinySpine configuration ({project_directory}/tinySpine/configuration.php) 4) Update setup configuration (the user data @ line 165) 4) Go to {project_url}/tinySpine/setup.php 5) Test Everything... 5) ??? 6) Profit!",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.6"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-livereload": "^3.8.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

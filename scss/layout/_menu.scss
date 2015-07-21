@@ -1,0 +1,51 @@
+.mainmenu {
+	position: relative;
+	z-index: 10;
+	
+	@media (max-width: $screen-sm) {
+		position: fixed;
+		top: 0;
+		left: 100%;
+		z-index: 10;
+		
+	}
+
+	a {
+		display: block;
+	}
+
+	> span {	
+		position: fixed;
+		display: block;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(69,60,85,.9);
+		opacity: 0;
+		visibility: hidden;
+		@include transition(all .2s ease-out);
+
+	}
+
+	.open-sidebar & {
+
+		> span {
+			opacity: 1;
+			visibility: visible;
+			
+		}
+	}
+
+	@media (min-width: $screen-sm) {
+		float: right;
+		margin-top: 2em;
+		
+		.access-trigger {
+			float: right;
+		}
+
+	}
+
+
+}

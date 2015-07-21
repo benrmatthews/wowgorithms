@@ -1,0 +1,22 @@
+.searchform {
+	float: left;
+
+	&-input {
+		width: 40vw;
+		outline: none;
+		background: none;
+		border: none;
+		font-style: italic;
+	}
+
+	&-label {
+		width: 1em;
+		height: 1.5em;
+		margin-right: 1em;
+		display: block;
+		float: left;
+		text-indent: -9999px;
+		background: url(../img/icon-search.svg) center no-repeat;
+		background-size: contain;
+	}
+}
