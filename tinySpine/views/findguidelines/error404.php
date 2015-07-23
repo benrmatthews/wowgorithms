@@ -7,7 +7,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>About Find Guidelines - The fastest way to brand assets.</title>
+    <title>404 - Find Guidelines - The fastest way to brand assets.</title>
 
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
 	<meta name="description" content="Find guidelines on the web. The fastest way to brand assets.">

@@ -4,8 +4,14 @@ $(document).ready(function() {
 		$('body').toggleClass('open-sidebar');
 	})
 
-	$('.mainmenu > span').on('click', function(e){
-		$('body').removeClass('open-sidebar');
+	$('.btn-add').on('click', function(e) {
+		e.preventDefault();
+		$('body').toggleClass('open-modal');
+
+	})
+
+	$('.overlay').on('click', function(e){
+		$('body').removeClass('open-sidebar open-modal');
 	})
 
 	$('body').keydown(function (e) {

@@ -50,6 +50,7 @@ function roundNumber($number) {
   <link rel="icon" href="http://findguidelin.es/img/favicon.ico" />
   <link rel="stylesheet" href="<?php echo BASEURL; ?>css/style.css">
   <script src="<?php echo BASEURL; ?>js/modernizr.js"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
 <div id="fb-root"></div>
@@ -70,7 +71,7 @@ function roundNumber($number) {
       <h1><a href="<?php echo BASEURL; ?>">FindGuidelin.es <em>The fastest way to brand assets.</em></a></h1>
     </section>
     <nav class="mainmenu">
-      <span></span>
+      <span class="overlay"></span>
       <div class="sidebar__wrapper">
 
         <button id="access-trigger" role="widget" class="access-trigger">
@@ -184,6 +185,99 @@ function roundNumber($number) {
             </div>
         </div>
     </footer>
+</div>
+
+<div class="modal">
+<span class="overlay"></span>
+  <div class="modal__wrapper">
+    <div class="modal__container">
+      <header class="modal__header">
+        <h1 class="modal__title">Add a guideline</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque sint quis tempora, veritatis aliquid culpa, cupiditate doloremque, magni corrupti vero officia numquam sapiente quaerat! Nisi soluta, corporis voluptatibus similique deserunt?</p>
+      </header>
+      <form action="#" class="form">
+        <div class="form-item">
+          <div class="form-wrapper-item">
+            <div class="label-infos">
+              <label for="name">Brand name*</label>
+            </div>
+            <div class="wrapper-input">
+              <input type="text" name="name" id="name">
+            </div>
+          </div>
+        </div>
+        <div class="form-item">
+          <div class="form-wrapper-item">
+            <div class="label-infos">
+              <label for="url">Brand URL*</label>
+            </div>
+            <div class="wrapper-input">
+              <input type="text" name="url" id="url">
+            </div>
+          </div>
+        </div>
+        <div class="form-item">
+          <div class="form-wrapper-item">
+            <div class="label-infos">
+              <label for="color">Brand color*</label>
+              <p>Must be hexadecimal</p>
+            </div>
+            <div class="wrapper-input">
+              <input type="text" name="color" id="color">
+            </div>
+          </div>
+        </div>
+        <div class="form-item">
+          <div class="form-wrapper-item">
+            <div class="label-infos">
+              <label for="category">Brand's category*</label>
+            </div>
+            <div class="wrapper-input">
+              <select name="category" id="category">
+                <option value="">Aucune</option>
+                <option value="">Category 1</option>
+                <option value="">Category 2</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-item">
+          <div class="form-wrapper-item">
+            <div class="label-infos">
+              <label for="logo">Brand's logo*</label>
+              <p>It has to be a SVG monochromia.</p>
+            </div>
+            <div class="wrapper-input">
+              <input type="file">
+            </div>
+          </div>
+        </div>
+        <div class="form-item">
+          <div class="form-wrapper-item">
+            <div class="label-infos">
+              <label for="tags">Tags</label>
+              <p>Separated by commas</p>
+            </div>
+            <div class="wrapper-input">
+              <textarea name="tags" id="tags" rows="5"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="form-item">
+          <div class="form-wrapper-item">
+            <div class="label-infos">
+              <label for="recaptcha">Captcha</label>
+            </div>
+            <div class="wrapper-input">
+              <div class="g-recaptcha" data-sitekey="6LfgPgoTAAAAAKveISVB3ZEWSO_3QGALby9kzyBo"></div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn">Submit guideline</button>
+      </form>
+    </div>
+  </div>
+
 </div>
 
 <script src="<?php echo BASEURL; ?>js/jquery.min.js"></script>
