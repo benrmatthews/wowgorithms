@@ -17,6 +17,15 @@ function hex2rgb($hex) {
    //return $rgb; // returns an array with the rgb values
 }
 
+function roundNumber($number) {
+  if($number > 999) {
+       return round($number / 1000, 1) . "k";
+    }
+    else {
+        return $number;
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -143,7 +152,8 @@ function hex2rgb($hex) {
                 <header>
                 <h2 class="grid__block-title"><a href="<?= BASEURL.$brand->slug ?>" target="_blank"><?= $brand->name ?></a></h2>
                 <div class="views">
-                    <?php if ($brand->clicksCount) { echo $brand->clicksCount; } else { echo "0"; } ?></div>
+                    <?php if ($brand->clicksCount) { 
+                      echo roundNumber($brand->clicksCount); } else { echo "0"; } ?></div>
                 </header>
                 <?php if ($brand->tags) : ?>
                 <?php $tags = explode(", ",$brand->tags); ?>
