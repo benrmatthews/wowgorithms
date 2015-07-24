@@ -1820,6 +1820,7 @@ hr {
   color: #AEAAB7;
   text-transform: uppercase;
   display: inline-block;
+  outline: none;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease; }
