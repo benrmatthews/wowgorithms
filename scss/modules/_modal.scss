@@ -14,6 +14,10 @@
 
 	.overlay {
 		background: none;
+
+		.open-modal & {
+			@include transition-delay(.3s);
+		}
 	}
 
 	.open-modal &, .open-modal & .overlay {
@@ -22,37 +26,103 @@
 	}
 
 	&__wrapper {
-		background-color: #fff;
-		border-radius: 6px;
-		width: 80%;
-		max-width: $screen-lg - 200;
-		margin: 10em auto;
-		padding: 3em;
+		width: 100%;
 		position: relative;
 		z-index: 1;
+		padding: 5%;
 
-		@include transition(all .4s cubic-bezier(0.68, -0.55, 0.265, 1.55) .3s);
+		@include transition(all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) .1s);
 		opacity: 0;
-		@include transform(translateY(-100px));
+		@include transform(translateY(100px));
 
 		.open-modal & {
 			opacity: 1;
 			@include transform(translateY(0px));
+			@include transition-delay(0);
+		}
+
+		@media (min-width: $screen-sm) {
+			padding: 5em 0;
+		}
+	}
+
+	&__container {
+		border-radius: 6px;
+		background-color: #fff;
+		margin: 0 auto;
+		max-width: $screen-sm;
+		position: relative;
+		padding: 2em;
+
+		@media (min-width: $screen-sm) {
+			padding: 3em;
+
 		}
 	}
 
 	&__header {
-		width: 80%;
+		padding-top: 3em;
+
+		@media (min-width: $screen-sm) {
+			padding-top: 2em;
+		}
+
 		p {
 			font-weight: lighter;
 		}
 	}
 
 	&__title {
-		color: $maincolor;
 		text-transform: uppercase;
-		margin-top: 0;
-		@include pxem(20px);
+		margin: 0;
+		@include pxem(16px);
+		border-radius: 6px 6px 0 0;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 1.5em 1.5em 1.5em 2em;
+		background-color: lighten($text-color, 60%);
+
+		@media (min-width: $screen-sm) {
+			padding-left: 3em;
+		}
+	}
+
+	.close {
+		display: block;
+		width: 2.5em;
+  		height: 2.5em;
+  		line-height: 2.5em; 
+		background-color: lighten($text-color, 40%);
+  		position: absolute;
+  		top: 1em;
+  		right: 1em;
+		border-radius: 3em;
+		cursor: pointer;
+		@include transition(background-color .3s ease);
+
+		&:hover {
+			background-color: lighten($text-color,30%)
+		}
+		
+		&:before, &:after {
+			content: "";
+			position: absolute;
+			width: 1em;
+			height: 2px;
+			background-color: white;
+			top: 50%;
+			left: 50%;
+			margin: -1px 0 0 -.5em;
+			@include transform(rotate(45deg));
+		}
+
+		&:after {
+			@include transform(rotate(-45deg));
+
+		}
 	}
 
 }

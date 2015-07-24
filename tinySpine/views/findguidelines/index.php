@@ -188,8 +188,8 @@ function roundNumber($number) {
 </div>
 
 <div class="modal">
-<span class="overlay"></span>
   <div class="modal__wrapper">
+  <span class="overlay"></span>
     <div class="modal__container">
       <header class="modal__header">
         <h1 class="modal__title">Add a guideline</h1>
@@ -275,6 +275,7 @@ function roundNumber($number) {
         </div>
         <button type="submit" class="btn">Submit guideline</button>
       </form>
+      <div class="close"></div>
     </div>
   </div>
 
