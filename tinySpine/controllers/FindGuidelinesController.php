@@ -3,6 +3,7 @@ Class FindGuidelinesController extends Controller{
 	
 	public function index(){
 		$this->set('categories', BrandCategory::getAll());
+		$this->set('logs', Logs::getAll());
 		$this->render('findguidelines/index');
 	}
 	

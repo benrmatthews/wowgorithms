@@ -14,3 +14,4 @@ include(ROOT.'/classes/Brand.php');
 include(ROOT.'/classes/User.php');
 include(ROOT.'/classes/BrandCategory.php');
 include(ROOT.'/classes/BrandClick.php');
+include(ROOT.'/classes/Logs.php');

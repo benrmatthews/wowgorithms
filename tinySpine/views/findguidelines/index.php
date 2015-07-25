@@ -95,13 +95,14 @@ function roundNumber($number) {
                   </div>
                   <div class="log">
                   <h2>Last updates</h2>
+                    
                     <ul class="log__list">
-                    <?php for ($i=0; $i<20; $i++) { ?>
+                    <?php foreach($logs as $log) : ?>
                       <li class="log__list-item">
-                        Machin was added.
-                        <strong>Added on 3rd July 2015</strong>
+                        <?= $log->brandName ?> has been updated.
+                        <strong>On <?= $log->date ?></strong>
                       </li>
-                    <?php } ?>
+                    <?php endforeach; ?>
                     </ul>
                   </div>
                 </div>
@@ -220,11 +221,11 @@ function roundNumber($number) {
         <div class="form-item">
           <div class="form-wrapper-item">
             <div class="label-infos">
-              <label for="color">Brand color*</label>
+              <label for="brandColor">Brand color*</label>
               <p>Must be hexadecimal</p>
             </div>
             <div class="wrapper-input">
-              <input type="text" name="color" id="color">
+              <input type="text" name="brandColor" id="brandColor">
             </div>
           </div>
         </div>
@@ -235,9 +236,10 @@ function roundNumber($number) {
             </div>
             <div class="wrapper-input">
               <select name="category" id="category">
-                <option value="">Aucune</option>
-                <option value="">Category 1</option>
-                <option value="">Category 2</option>
+              <option value="" selected="selected">Aucune</option>
+                <?php foreach($categories as $category): ?>
+                  <option value="<?php echo $category->getId(); ?>"><?php echo $category->name; ?></option>
+                <?php endforeach; ?>
               </select>
             </div>
           </div>

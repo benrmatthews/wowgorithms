@@ -75,6 +75,7 @@ Class Brand{
 
 		$pdo = DataSource::load();
 		if(!$this->hasId()){
+
 			$statement = 'INSERT INTO brand
 			(name, brandColor, borderColor, category, tags, slug, url, date, isPDF, clickedBlock, deleted)
 			VALUES (:name, :brandColor, :borderColor, :category, :tags, :slug, :url, :date, :isPDF, :clickedBlock, :deleted)';
@@ -93,12 +94,10 @@ Class Brand{
 			$data['clickedBlock'] = (int)$this->clickedBlock;
 			$data['deleted'] = (int)$this->deleted;
 			$preparedStatement = $pdo->prepare($statement);
-			
-			$this->registerLog();
+
+			$this->registerLog(1);		
 			
 			return $preparedStatement->execute($data);
-
-
 
 		}else{
 			$statement = 'UPDATE brand SET
@@ -128,6 +127,9 @@ Class Brand{
 			$data['deleted'] = $this->deleted;
 			$data['id'] = $this->id;
 			$preparedStatement = $pdo->prepare($statement);
+
+			$this->registerLog(2);
+
 			return $preparedStatement->execute($data);
 		}
 		return false;
@@ -173,11 +175,11 @@ Class Brand{
 		return false;
 	}
 
-	public function registerLog(){
+	public function registerLog($msg){
 		if($this->hasId()){
 			$log = new Logs();
 			$log->brand = $this->getId();
-			$log->hasBeenCreated();
+			return $log->save($msg);
 		}
 		return false;
 	}
