@@ -119,6 +119,7 @@ function roundNumber($number) {
   <div class="searchform">
     <label for="searchform-input" class="searchform-label">Search</label>
     <input type="search" id="searchform-input" class="searchform-input" placeholder="Find any brand assets by typing name or tags" />
+    <span class="reset"></span>
   </div>
   <div class="options">
     order by

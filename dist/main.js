@@ -38,6 +38,12 @@ $(document).ready(function() {
 		$('body').removeClass('open-sidebar open-modal');
 	})
 
+	$('.reset').on('click', function(e) {
+		$('#searchform-input').val("");
+		$('.grid__block').show();
+		$("body").removeClass("isSearching");
+	})
+
 	$('.tag').on('click', function(e){
 		e.preventDefault();
 		$("body").addClass("isSearching");

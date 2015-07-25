@@ -93,9 +93,11 @@ Class Brand{
 			$data['clickedBlock'] = (int)$this->clickedBlock;
 			$data['deleted'] = (int)$this->deleted;
 			$preparedStatement = $pdo->prepare($statement);
+			
+			$this->registerLog();
+			
 			return $preparedStatement->execute($data);
 
-			$this->registerLog();
 
 
 		}else{
