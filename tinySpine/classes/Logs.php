@@ -43,7 +43,7 @@ Class Logs{
     $pdo = DataSource::load();
     $statement = 'SELECT logs.*, brand.name AS brandName, brand.brandColor AS brandColor, brand.slug AS brandSlug FROM logs
     LEFT JOIN brand ON logs.brand = brand.id
-    ORDER BY logs.date ASC
+    ORDER BY logs.date DESC
     LIMIT 1000';
     $preparedStatement = $pdo->prepare($statement);
     $preparedStatement->execute();
