@@ -128,13 +128,24 @@ function roundNumber($number) {
     <span class="reset"></span>
   </div>
   <div class="options">
-    order by
+    <form action="." class="options__form">
+    <label for="s">Sort by</label>
+      <select name="s" id="s">
+        <option value="popular" <?php if ((empty($_GET['s'])) || ($_GET['s'] == 'popular')) { echo 'selected="selected"';} ?> >Most popular</option>
+        <option value="alphabetically" <?php if ((!empty($_GET['s'])) && ($_GET['s']=="alphabetically")) {echo 'selected="selected"';} ?>>Alphabetically</option>
+      </select>
+    </form>
   </div>
 </section>
 
 <main role="main" class="maincontent">
 <?php foreach($categories as $category):
-    $brands = $category->getAllBrandOrderByClicks();
+
+    if ((empty($_GET['s'])) || ($_GET['s'] == 'popular')) {
+      $brands = $category->getAllBrandOrderByClicks();
+    } else {
+      $brands = $category->getAllBrand();
+    }
     ?>
   <header class="header__category">
     <h1 class="maincontent__title"><?php echo $category->name; ?> </h1>
@@ -149,7 +160,7 @@ function roundNumber($number) {
                 <div class="grid__block-wrapper">
                   <div class="grid__block-centered">
                     <div>
-                        <img src="img/icons/<?= $brand->slug ?>.svg" alt="<?= $brand->name ?>"/>
+                        <?php echo file_get_contents(BASEURL."img/icons/".$brand->slug.".svg"); ?>
                     </div>
                   </div>
                 </div>
@@ -281,7 +292,11 @@ function roundNumber($number) {
             </div>
           </div>
         </div>
-        <button type="submit" class="btn">Submit guideline</button>
+        <div class="form-submit">
+          <div class="form-wrapper-submit">
+            <button type="submit" class="btn">Submit guideline</button>
+          </div>
+        </div>
       </form>
       <div class="close"></div>
     </div>

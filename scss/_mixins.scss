@@ -2,3 +2,9 @@
 	$pxem: $fz / $fz-base;
 	font-size: #{$pxem}em;
 }
+
+@mixin appearance($appearance...) {
+  -webkit-appearance: $appearance;
+     -moz-appearance: $appearance;
+          appearance: $appearance;
+}

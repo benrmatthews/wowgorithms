@@ -5,5 +5,44 @@
 
 	.options {
 		float: right;
+		label {
+			display: block;
+			text-transform: uppercase;
+			font-weight: bold;
+			@include pxem(11px);
+			letter-spacing: 1px;
+			opacity: .5;
+			position: relative;
+			float: left;
+			padding-right: 1.5em;
+
+			&:after {
+				content: "";
+				position: absolute;
+				right: 0;
+				top: .4em;
+
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 5.2px 3px 0 3px;
+				border-color: $text-color transparent transparent transparent;
+				opacity: .4;
+
+
+			}
+		}
+
+		select {
+			background: transparent;
+			border: none;
+			@include appearance(none);
+			font-weight: lighter;
+			
+			@include pxem(18px);
+			clear: both;
+			float: left;
+			cursor: pointer
+		}
 	}
 }

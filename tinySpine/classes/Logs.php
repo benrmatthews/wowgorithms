@@ -24,6 +24,20 @@ Class Logs{
     return $preparedStatement->execute($data);
   }
 
+  public function delete(){
+    $pdo = DataSource::load();
+    if($this->hasId()){
+      $statement = 'DELETE FROM logs WHERE brand = :id';
+      $preparedStatement = $pdo->prepare($statement);
+      $data['id'] = $this->id;
+      if($preparedStatement->execute($data)){
+        $this->id = 0;
+        return true;
+      }
+    }
+    return false;
+  }
+
   public function setProperties($properties){
     foreach($properties as $key => $value){
       $this->setProperty($key, $value);

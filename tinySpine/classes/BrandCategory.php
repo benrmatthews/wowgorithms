@@ -87,7 +87,7 @@ Class BrandCategory{
   	$statement = 'SELECT brand.*, category.name AS categoryName FROM brand
 		LEFT JOIN category ON brand.category = category.id
 		WHERE deleted = 0 AND category = :category
-		ORDER BY brand.id ASC
+		ORDER BY brand.name ASC
 		LIMIT 1000';
   	$preparedStatement = $pdo->prepare($statement);
   	$data = array();

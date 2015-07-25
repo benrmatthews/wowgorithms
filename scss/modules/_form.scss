@@ -61,8 +61,13 @@
 			}
 		}
 
-		button[type=submit] {
-			@include make-xs-column-pull(5);
-		}
+
+
+	}
+
+	.btn {
+		position: relative;
+		@include make-xs-column-push(5);
+		margin-left: $grid-gutter-width/2;
 	}
 }

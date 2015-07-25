@@ -63,7 +63,9 @@ $(document).ready(function() {
 		}
 	})
 
-	
+	$('.options select').change(function() {
+		$('.options__form').trigger('submit');
+	})
 
 	$('#searchform-input').keyup(function (e) {
 		if ((e.keyCode!='27') && ($(this).val().length > 0)){

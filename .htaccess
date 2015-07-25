@@ -1,5 +1,6 @@
 Options +FollowSymLinks -indexes
 RewriteEngine On
+RewriteRule ^files/ - [L]
 RewriteRule ^css/ - [L]
 RewriteRule ^img/ - [L]
 RewriteRule ^js/ - [L]
