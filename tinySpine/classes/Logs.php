@@ -41,7 +41,7 @@ Class Logs{
   static public function getAll(){
     $logs = array();
     $pdo = DataSource::load();
-    $statement = 'SELECT logs.*, brand.name AS brandName FROM logs
+    $statement = 'SELECT logs.*, brand.name AS brandName, brand.brandColor AS brandColor, brand.slug AS brandSlug FROM logs
     LEFT JOIN brand ON logs.brand = brand.id
     ORDER BY logs.date ASC
     LIMIT 1000';

@@ -8,6 +8,11 @@
   color: white;
 }
 
+svg {
+  * {
+    fill: inherit;
+  }
+}
 
 .centered {
 	max-width: $screen-lg;

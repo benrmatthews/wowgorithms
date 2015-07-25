@@ -1313,6 +1313,9 @@ hr {
   background-color: #F23218;
   color: white; }
 
+svg * {
+  fill: inherit; }
+
 .centered, .mainheader, .maincontent, .sidebar__wrapper, .optionsPanel, .mainfooter {
   max-width: 1200px;
   margin: 0 auto; }
@@ -1586,6 +1589,12 @@ hr {
   margin: 0; }
   .log__list-item {
     padding: 1em 0; }
+    .log__list-item:before,
+    .log__list-item:after {
+      content: " ";
+      display: table; }
+    .log__list-item:after {
+      clear: both; }
     .log__list-item + .log__list-item {
       border-top: 1px solid #E6E2E9; }
     .log__list-item strong {
@@ -1594,6 +1603,21 @@ hr {
       font-size: 0.6875em;
       font-weight: bold;
       opacity: .6; }
+
+.log__icon {
+  display: block;
+  float: left;
+  width: 2em;
+  height: 2em;
+  margin-top: .1em; }
+  .log__icon svg {
+    fill: currentColor !important;
+    width: 100%;
+    height: 100%; }
+
+.log__text {
+  float: left;
+  margin-left: .8em; }
 
 .optionsPanel {
   margin-top: 1em;

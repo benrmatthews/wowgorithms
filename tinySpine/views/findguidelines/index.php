@@ -99,8 +99,13 @@ function roundNumber($number) {
                     <ul class="log__list">
                     <?php foreach($logs as $log) : ?>
                       <li class="log__list-item">
-                        <?= $log->brandName ?> has been updated.
+                      <div class="log__icon" style="color: #<?= $log->brandColor ?>">
+                        <?php echo file_get_contents(BASEURL."img/icons/".$log->brandSlug.".svg"); ?>
+                      </div>
+                      <div class="log__text">
+                        <span style="color:#<?= $log->brandColor ?>"><?= $log->brandName ?></span> has been updated.
                         <strong>On <?= $log->date ?></strong>
+                      </div>
                       </li>
                     <?php endforeach; ?>
                     </ul>
