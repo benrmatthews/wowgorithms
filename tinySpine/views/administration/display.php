@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
+    <link href="<?php echo(BASEURL); ?>css/style_administration.css" rel="stylesheet">
     <link href="<?php echo(BASEURL); ?>bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <link href="<?php echo(BASEURL); ?>bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
