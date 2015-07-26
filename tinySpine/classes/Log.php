@@ -69,5 +69,25 @@ Class Log{
     }
     return $logs;
   }
+  
+  static public function getLatest($limit){
+  	$limit = (int)$limit;
+  	$logs = array();
+  	$pdo = DataSource::load();
+  	$statement = 'SELECT log.*, brand.name AS brandName, brand.brandColor AS brandColor, brand.slug AS brandSlug FROM log
+    LEFT JOIN brand ON log.brand = brand.id
+    ORDER BY log.date DESC
+    LIMIT :limit';
+  	$preparedStatement = $pdo->prepare($statement);
+  	$preparedStatement->bindParam('limit', $limit, PDO::PARAM_INT);
+  	$preparedStatement->execute();
+  	$logsData = $preparedStatement->fetchAll();
+  	foreach($logsData as $logData){
+  		$log = new self();
+  		$log->setProperties($logData);
+  		$logs[] = $log;
+  	}
+  	return $logs;
+  }
 
 }

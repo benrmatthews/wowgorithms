@@ -3,7 +3,7 @@ Class FindGuidelinesController extends Controller{
 	
 	public function index(){
 		$this->set('categories', BrandCategory::getAll());
-		$this->set('logs', Log::getAll());
+		$this->set('logs', Log::getLatest(25));
 		$this->render('findguidelines/index');
 	}
 	
@@ -89,7 +89,6 @@ Class FindGuidelinesController extends Controller{
 		$brands = Brand::getAll();
 		echo json_encode($brands);
 	}
-
 
 	public function error404(){
 		header("HTTP/1.0 404 Not Found");
