@@ -147,9 +147,6 @@ Class Brand{
 	public function delete(){
 		$pdo = DataSource::load();
 		if($this->hasId()){
-			$log = new Logs();
-			$log->brand = $this->getId();
-			$log->delete();
 
 			$statement = 'DELETE FROM brand WHERE id = :id';
 			$preparedStatement = $pdo->prepare($statement);
