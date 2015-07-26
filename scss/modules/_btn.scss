@@ -11,6 +11,8 @@
 	@include transition(background-color .3s ease);
 
 	&:hover {
+		color: #fff;
+		text-decoration: none;
 		background-color: lighten($maincolor, 5%);
 	}
 
@@ -22,7 +24,7 @@
 	.form & {
 		position: relative;
 		@include make-xs-column-push(5);
-		margin-left: $grid-gutter-width/2;
+		margin-left: $grid-gutter-width/4;
 	}
 
 	&-add {

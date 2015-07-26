@@ -1,5 +1,8 @@
 .form {
-	margin-top: 3em;
+	margin-top: -3em;
+	background-color: #fff;
+	padding: 2em;
+	border: 1px solid #EDECE7;
 
 	&-wrapper-item {
 		@include make-row;
@@ -12,12 +15,6 @@
 		border-bottom: 1px solid #EDECE7;
 		clear: both;
 		width: 100%;
-
-		&:first-child {
-			border-bottom: 3px double #EDECE7;
-			margin-bottom: 2em;
-			padding-bottom: 2em;
-		}
 		
 		label, .wrapper-input {
 			display: block;
@@ -67,6 +64,21 @@
 			}
 		}
 
+	}
+
+	.icon {
+		
+		float: left;
+		padding: 1em;
+
+		svg {
+			fill: white;
+		}
+
+		+ input {
+			width: auto;
+			margin-left: 1em;
+		}
 	}
 
 }

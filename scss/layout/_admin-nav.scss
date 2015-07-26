@@ -1,0 +1,58 @@
+.nav {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	
+	li {
+		display: inline-block;
+		float: left;
+		padding: 1em 0;
+		position: relative;
+
+		a {
+			@include pxem(12px);
+			font-weight: bold;
+			text-transform: uppercase;
+			color: $text-color;
+			@include transition(all .2s ease-out);
+
+			&.disconnect {
+				opacity: .5;
+				&:hover {
+					opacity: 1;
+				}
+			}
+
+		}
+
+		&.active a, a:hover {
+			color: $maincolor;
+			text-decoration: none;
+		}
+
+		&.active {
+			&:after {
+				background-color: $maincolor;
+			}
+		}
+
+		&:after {
+			@include pxem(18px, 12px);
+			content: "";
+			position: absolute;
+			bottom: 0;
+			margin-bottom: -2px;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background: transparent;
+			@include transition(background .2s ease-out);
+		}
+
+
+		
+		+ li {
+			margin-left: 2em;
+		}
+	}
+}

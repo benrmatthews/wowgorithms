@@ -1682,13 +1682,15 @@ svg * {
   -o-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease; }
   .btn:hover {
+    color: #fff;
+    text-decoration: none;
     background-color: #f34730; }
   .btn:active, .btn:focus {
     background-color: #cc220b; }
   .form .btn {
     position: relative;
     left: 25%;
-    margin-left: 20px; }
+    margin-left: 10px; }
   .btn-add {
     display: block;
     width: 80%; }
@@ -2068,6 +2070,10 @@ svg * {
     border-bottom: 1px solid #EDECE7;
     clear: both;
     width: 100%; }
+    .form-item:first-child {
+      border-bottom: 3px double #EDECE7;
+      margin-bottom: 2em;
+      padding-bottom: 2em; }
     .form-item label, .form-item .wrapper-input {
       display: block; }
     .form-item .label-infos {

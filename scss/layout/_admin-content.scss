@@ -1,0 +1,37 @@
+.content {
+	table {
+		width: 100%;
+		background-color: #fff;
+		border: 1px solid lighten($text-gray, 65%);
+
+		td, th {
+			padding: $grid-gutter-width/2;
+			font-weight: normal;
+		}
+
+		th {
+			background-color: lighten($text-gray, 65%);
+			text-transform: uppercase;
+			@include pxem(12px);
+			font-weight: bolder;
+			text-align: left;
+		}
+
+		tr {
+			&:nth-child(2n+1) {
+				background-color: lighten($text-gray, 70%);
+			}
+		}
+
+		.actions {
+			a {
+				text-transform: uppercase;
+				@include pxem(12px);
+
+				+ a {
+					margin-left: .5em;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,153 @@
+.mainheader {
+	@extend .centered;
+
+	&-wrapper {
+		@extend .clearfix;
+		border-bottom: 2px solid #EDECE7;
+	}
+
+	.logo {
+		float: left;
+		h1 {
+			@extend .clearfix;
+			@include pxem(16px);
+			line-height: 1;
+			text-transform: uppercase;
+			margin: 1.2em 0;
+			
+			a {
+				display: block;
+				float: left;
+				color: $text-color;
+				@include transition(all .3s ease);
+
+				&:hover, &:focus {
+					text-decoration: none;
+					color: $maincolor;
+					opacity: 1;
+
+				}
+
+				+ a {		
+					font-style: normal;
+					font-weight: normal;
+					text-transform: none;
+					text-transform: uppercase;
+					opacity: .5;
+					margin-left: .3em;
+				}
+			}
+		}
+	}
+
+	.access-trigger {
+		width: 2.5em;
+		height: 2.5em;
+		background-color: $text-color;
+		border: none;
+		border-radius: 2.5em;
+		cursor: pointer;
+		position: fixed;
+		right: 1em;
+		top: 1.5em;
+		z-index: 30;
+		outline: none;
+		margin-left: 1em;
+		@include transition(background-color .3s ease);
+
+		&:hover {
+			background-color: lighten($text-color, 10%);
+		}
+
+		@media (min-width: $screen-sm) {
+			position: relative;
+			top: auto;
+			right: auto;
+		}
+
+		> div {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 1em;
+			height: 12px;
+			margin: -6px 0 0 -.5em;
+			@include transition(all .25s ease-out);
+		}
+
+		span {
+			display: block;
+			border-radius: 2px;
+			width: 1em;
+			height: 2px;
+			background-color: white;
+			position: absolute;
+			top: 0;
+			left: 0;
+			@include transition(all .3s cubic-bezier(0.19, 1, 0.22, 1));
+
+			&:nth-child(2) {
+				top: 5px;
+				width: .5em;
+			}
+
+			&:nth-child(3) {
+				top: 10px;
+				width: .75em;
+			}
+
+		}
+
+		.open-sidebar & {
+			> div {
+				@include transform(translateY(0) rotate(180deg));
+			}
+
+			span {
+				@include transition(all .3s ease-out);
+
+
+				&:nth-child(1) {
+					@include transform(translateY(5px) rotate(45deg));
+				}
+
+				&:nth-child(2) {
+					@include transform(scale(.1));
+					opacity: 0;
+				}
+				&:nth-child(3) {
+					@include transform(translateY(-5px) rotate(-45deg));
+					width: 1em;
+				}
+			}
+
+		}
+	}
+}
+
+
+.header {
+	&__page {
+		@extend .clearfix;
+		margin-bottom: 2em;
+		position: relative;
+		.actions {
+			position: absolute;
+			top: 0.3em;
+			right: 0;
+		}
+	}
+}
+
+.page {
+	&__title {
+		margin: 0;
+		@include pxem(36px);
+		font-weight: lighter
+	}
+}
+
+
+
+
+

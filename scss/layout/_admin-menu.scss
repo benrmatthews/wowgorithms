@@ -1,0 +1,34 @@
+.mainmenu {
+
+	.open-sidebar & {
+
+		> span {
+			opacity: 1;
+			visibility: visible;
+			
+		}
+	}
+	float: right;
+	@media (min-width: $screen-sm) {
+		
+		
+		.access-trigger {
+			float: right;
+		}
+
+	}
+
+}
+
+.overlay {
+	position: fixed;
+	display: block;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(69,60,85,.9);
+	opacity: 0;
+	visibility: hidden;
+	@include transition(all .2s ease-out);
+}
