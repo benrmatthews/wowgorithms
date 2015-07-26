@@ -95,9 +95,12 @@ Class Brand{
 			$data['deleted'] = (int)$this->deleted;
 			$preparedStatement = $pdo->prepare($statement);
 
-			$this->registerLog(1);		
 			
-			return $preparedStatement->execute($data);
+			if($preparedStatement->execute($data)){
+				$this->id = $pdo->lastInsertId();
+				$this->registerLog(1);
+				return true;
+			}
 
 		}else{
 			$statement = 'UPDATE brand SET
@@ -181,7 +184,7 @@ Class Brand{
 
 	public function registerLog($msg){
 		if($this->hasId()){
-			$log = new Logs();
+			$log = new Log();
 			$log->brand = $this->getId();
 			return $log->save($msg);
 		}

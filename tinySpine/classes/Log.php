@@ -1,5 +1,5 @@
 <?php
-Class Logs{
+Class Log{
 
   protected $id;
   public $brand;
@@ -14,7 +14,7 @@ Class Logs{
 
   public function save($msg){
     $pdo = DataSource::load();
-    $statement = 'INSERT INTO logs
+    $statement = 'INSERT INTO log
     (brand, typeMessage)
     VALUES (:brand, :typeMessage)';
     $data = array();
@@ -27,7 +27,7 @@ Class Logs{
   public function delete(){
     $pdo = DataSource::load();
     if($this->hasId()){
-      $statement = 'DELETE FROM logs WHERE brand = :id';
+      $statement = 'DELETE FROM log WHERE brand = :id';
       $preparedStatement = $pdo->prepare($statement);
       $data['id'] = $this->id;
       if($preparedStatement->execute($data)){
@@ -55,9 +55,9 @@ Class Logs{
   static public function getAll(){
     $logs = array();
     $pdo = DataSource::load();
-    $statement = 'SELECT logs.*, brand.name AS brandName, brand.brandColor AS brandColor, brand.slug AS brandSlug FROM logs
-    LEFT JOIN brand ON logs.brand = brand.id
-    ORDER BY logs.date DESC
+    $statement = 'SELECT log.*, brand.name AS brandName, brand.brandColor AS brandColor, brand.slug AS brandSlug FROM log
+    LEFT JOIN brand ON log.brand = brand.id
+    ORDER BY log.date DESC
     LIMIT 1000';
     $preparedStatement = $pdo->prepare($statement);
     $preparedStatement->execute();
