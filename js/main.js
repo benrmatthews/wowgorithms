@@ -1,8 +1,9 @@
 function searchTerm(st) {
+	var searchterm;
 	if( Object.prototype.toString.call( st ) === '[object Object]' ) {
-		var searchterm = st.val().toLowerCase();
+		searchterm = st.val().toLowerCase();
 	} else {
-		var searchterm = st.toLowerCase();
+		searchterm = st.toLowerCase();
 	}
 
 	$('.grid__block').each(function() {
@@ -20,31 +21,31 @@ $(document).ready(function() {
 	$('.access-trigger').on('click', function(e){
 		e.preventDefault();
 		$('body').toggleClass('open-sidebar');
-	})
+	});
 
 	$('.btn-add').on('click', function(e) {
 		e.preventDefault();
 		$('body').removeClass('open-sidebar');
 		$('body').toggleClass('open-modal');
 
-	})
+	});
 
 	$('.overlay, .close').on('click', function(e){
 		$('body').removeClass('open-sidebar open-modal');
-	})
+	});
 
 	$('.reset').on('click', function(e) {
 		$('#searchform-input').val("");
 		$('.grid__block').show();
 		$("body").removeClass("isSearching");
-	})
+	});
 
 	$('.tag').on('click', function(e){
 		e.preventDefault();
 		$("body").addClass("isSearching");
 		$('#searchform-input').val($(this).text());
 		searchTerm($(this).text());
-	})
+	});
 
 	$('body').keydown(function (e) {
 		if ((e.metaKey && e.keyCode=='70' ) || (e.ctrlKey && e.keyCode=='70' )) {
@@ -61,11 +62,11 @@ $(document).ready(function() {
 			$('#searchform-input').val("");
 			$('.grid__block').show();
 		}
-	})
+	});
 
 	$('.options select').change(function() {
 		$('.options__form').trigger('submit');
-	})
+	});
 
 	$('#searchform-input').keyup(function (e) {
 		if ((e.keyCode!='27') && ($(this).val().length > 0)){
@@ -74,7 +75,7 @@ $(document).ready(function() {
 			$("body").removeClass("isSearching");
 		}
 		searchTerm($(this));
-	})
+	});
 
 	$(".color").on("click", function() {
 
@@ -90,6 +91,6 @@ $(document).ready(function() {
 	        selection.addRange(range);
 	    }
 
-	})
+	});
 
 });
