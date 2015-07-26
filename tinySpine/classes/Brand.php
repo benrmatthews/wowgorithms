@@ -1,6 +1,10 @@
 <?php
 Class Brand{
-
+	
+	const STATUS_INVALID = 0;
+	const STATUS_PUBLISHED = 1;
+	const STATUS_REJECTED = 2;
+	
 	protected $id;
 	public $name;
 	public $brandColor;
@@ -14,7 +18,7 @@ Class Brand{
 	public $isPDF;
 	public $deleted;
 	public $clicksCount;
-
+	public $status;
 
 	public function hasId(){
 		return !empty($this->id);
@@ -33,9 +37,9 @@ Class Brand{
 
 		$preparedStatement = $pdo->prepare($statement);
 		$preparedStatement->execute(array('id' => $id));
-		$userData = $preparedStatement->fetch();
-		if(!empty($userData)){
-				$this->setProperties($userData);
+		$brandData = $preparedStatement->fetch();
+		if(!empty($brandData)){
+			$this->setProperties($brandData);
 		}
 	}
 	
@@ -48,9 +52,9 @@ Class Brand{
 	
 		$preparedStatement = $pdo->prepare($statement);
 		$preparedStatement->execute(array('slug' => $slug));
-		$userData = $preparedStatement->fetch();
-		if(!empty($userData)){
-			$this->setProperties($userData);
+		$brandData = $preparedStatement->fetch();
+		if(!empty($brandData)){
+			$this->setProperties($brandData);
 		}
 	}
 
@@ -77,8 +81,8 @@ Class Brand{
 		if(!$this->hasId()){
 
 			$statement = 'INSERT INTO brand
-			(name, brandColor, borderColor, category, tags, slug, url, date, isPDF, clickedBlock, deleted)
-			VALUES (:name, :brandColor, :borderColor, :category, :tags, :slug, :url, :date, :isPDF, :clickedBlock, :deleted)';
+			(name, brandColor, borderColor, category, tags, slug, url, date, isPDF, clickedBlock, status, deleted)
+			VALUES (:name, :brandColor, :borderColor, :category, :tags, :slug, :url, :date, :isPDF, :clickedBlock, :status, :deleted)';
 
 
 			$data = array();
@@ -92,10 +96,9 @@ Class Brand{
 			$data['date'] = $this->date;
 			$data['isPDF'] = $this->isPDF;
 			$data['clickedBlock'] = (int)$this->clickedBlock;
+			$data['status'] = (int)$this->status;
 			$data['deleted'] = (int)$this->deleted;
 			$preparedStatement = $pdo->prepare($statement);
-
-			
 			if($preparedStatement->execute($data)){
 				$this->id = $pdo->lastInsertId();
 				$this->registerLog(1);
@@ -114,6 +117,7 @@ Class Brand{
 			date = :date,
 			isPDF = :isPDF,
 			clickedBlock = :clickedBlock,
+			status = :status,
 			deleted = :deleted
 			WHERE id = :id';
 			$data = array();
@@ -128,6 +132,7 @@ Class Brand{
 			$data['isPDF'] = $this->isPDF;
 			$data['clickedBlock'] = $this->clickedBlock;
 			$data['deleted'] = $this->deleted;
+			$data['status'] = (int)$this->status;
 			$data['id'] = $this->id;
 			$preparedStatement = $pdo->prepare($statement);
 
@@ -192,22 +197,9 @@ Class Brand{
 	}
 
 	static public function getAll(){
-		$brands = array();
-		$pdo = DataSource::load();
-		$statement = 'SELECT brand.*, category.name AS categoryName FROM brand
-		LEFT JOIN category ON brand.category = category.id
-		WHERE deleted = 0
-		ORDER BY brand.id ASC
-		LIMIT 1000';
-		$preparedStatement = $pdo->prepare($statement);
-		$preparedStatement->execute();
-		$brandsData = $preparedStatement->fetchAll();
-		foreach($brandsData as $brandData){
-			$brand = new self();
-			$brand->setProperties($brandData);
-			$brands[] = $brand;
-		}
-		return $brands;
+		$query = new BrandQuery();
+  		$query->setOrderBy(BrandQuery::ORDER_BY_ID_ASC);
+	  	return $query->getBrands();
 	}
 	
 	

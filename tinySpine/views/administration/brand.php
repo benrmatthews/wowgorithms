@@ -49,6 +49,16 @@
                           <?php endforeach; ?>
                           </select>
                     </tr>
+                    
+                     <tr>
+                        <td class="category"><label for="category">status</label></td>
+                        <td>
+                          <select name="status" id="category">
+                            <option value="<?php echo Brand::STATUS_INVALID ?>"<?php if($brand->status == Brand::STATUS_INVALID) echo 'selected="selected"'?>>Invalide</option>
+                            <option value="<?php echo Brand::STATUS_PUBLISHED; ?>"<?php if($brand->status == Brand::STATUS_PUBLISHED) echo 'selected="selected"'?>>Publiée</option>
+                            <option value="<?php echo Brand::STATUS_REJECTED ?>"<?php if($brand->status == Brand::STATUS_REJECTED) echo 'selected="selected"'?>>Rejetée</option>
+                          </select>
+                    </tr>
 
                     <tr>
                         <td class="key"><label for="isPDF">isPDF</label></td>

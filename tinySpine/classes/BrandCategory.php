@@ -81,47 +81,26 @@ Class BrandCategory{
     return false;
   }
   
-  public function getAllBrand(){
-  	$brands = array();
-  	$pdo = DataSource::load();
-  	$statement = 'SELECT brand.*, category.name AS categoryName FROM brand
-		LEFT JOIN category ON brand.category = category.id
-		WHERE deleted = 0 AND category = :category
-		ORDER BY brand.name ASC
-		LIMIT 1000';
-  	$preparedStatement = $pdo->prepare($statement);
-  	$data = array();
-  	$data['category'] = $this->id;
-  	$preparedStatement->execute($data);
-  	$brandsData = $preparedStatement->fetchAll();
-  	foreach($brandsData as $brandData){
-  		$brand = new self();
-  		$brand->setProperties($brandData);
-  		$brands[] = $brand;
-  	}
-  	return $brands;
+  public function getAllBrand($status = null, $limit = 500, $offset = 0){
+  	$query = new BrandQuery();
+  	$query->setCategoryId($this->id);
+  	$query->setStatus($status);
+  	$query->setOrderBy(BrandQuery::ORDER_BY_ID_ASC);
+  	$query->setLimit($limit);
+  	$query->setOffset($offset);
+  	return $query->getBrands();
   }
   
-  public function getAllBrandOrderByClicks(){
-  	$brands = array();
-  	$pdo = DataSource::load();
-  	$statement = 'SELECT brand.*, category.name AS categoryName FROM brand
-		LEFT JOIN category ON brand.category = category.id
-		WHERE deleted = 0 AND category = :category
-		ORDER BY brand.clicksCount DESC
-		LIMIT 1000';
-  	$preparedStatement = $pdo->prepare($statement);
-  	$data = array();
-  	$data['category'] = $this->id;
-  	$preparedStatement->execute($data);
-  	$brandsData = $preparedStatement->fetchAll();
-  	foreach($brandsData as $brandData){
-  		$brand = new self();
-  		$brand->setProperties($brandData);
-  		$brands[] = $brand;
-  	}
-  	return $brands;
+  public function getAllBrandOrderByClicks($status = null, $limit = 500, $offset = 0){
+  	$query = new BrandQuery();
+  	$query->setCategoryId($this->id);
+  	$query->setStatus($status);
+  	$query->setOrderBy(BrandQuery::ORDER_BY_CLICKS_DESC);
+  	$query->setLimit($limit);
+  	$query->setOffset($offset);
+  	return $query->getBrands();
   }
+  
 
   static public function getAll(){
     $categories = array();

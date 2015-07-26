@@ -142,9 +142,9 @@ function roundNumber($number) {
 <?php foreach($categories as $category):
 
     if ((empty($_GET['s'])) || ($_GET['s'] == 'popular')) {
-      $brands = $category->getAllBrandOrderByClicks();
+      $brands = $category->getAllBrandOrderByClicks(Brand::STATUS_PUBLISHED);
     } else {
-      $brands = $category->getAllBrand();
+      $brands = $category->getAllBrand(Brand::STATUS_PUBLISHED);
     }
     ?>
   <header class="header__category">

@@ -174,6 +174,7 @@ Class AdministrationController extends Controller{
 			if(isset($_POST['url'])) $brand->url = $_POST['url'];
 			if(isset($_POST['date'])) $brand->date = $_POST['date'];
 			if(isset($_POST['isPDF'])) $brand->isPDF = $_POST['isPDF'];
+			if(isset($_POST['status'])) $brand->status = $_POST['status'];
 			if($brand->save()){
 				if(!empty($_FILES)){
 					if(!empty($_FILES['logoPNG']['size'])) $this->uploadFileToBrand($brand, 'logoPNG', 'png');
