@@ -16,36 +16,13 @@
 			padding: 1.5em 2em;
 			overflow: auto;
 			margin-right: 0;
-		}
-		
-		
+		}		
 
 		@include transition(all .3s cubic-bezier(0.19, 1, 0.22, 1));
-
-		.btn-add {
-			display: block;
-			width: 80%;
-
-			@media (min-width: $screen-sm) {
-				width: auto;
-				float: right;
-			}
-
-			&:before {
-				content: "";
-				width: 0.8em;
-				height: 0.8em;
-				display: inline-block;
-				margin-right: .6em;
-				background: url(../img/icon-add.svg) no-repeat;
-				background-size: contain;
-			}
-		}
 
 		.open-sidebar & {
 			right: 0;
 		}
-
 		
 	}
 

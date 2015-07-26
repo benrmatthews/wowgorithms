@@ -17,4 +17,31 @@
 	&:active, &:focus {
 		background-color: darken($maincolor, 10%);
 	}
+
+
+	.form & {
+		position: relative;
+		@include make-xs-column-push(5);
+		margin-left: $grid-gutter-width/2;
+	}
+
+	&-add {
+		display: block;
+		width: 80%;
+
+		@media (min-width: $screen-sm) {
+			width: auto;
+			float: right;
+		}
+
+		&:before {
+			content: "";
+			width: 0.8em;
+			height: 0.8em;
+			display: inline-block;
+			margin-right: .6em;
+			background: url(../img/icon-add.svg) no-repeat;
+			background-size: contain;
+		}
+	}
 }

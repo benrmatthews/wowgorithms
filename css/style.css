@@ -1523,21 +1523,6 @@ svg * {
       padding: 1.5em 2em;
       overflow: auto;
       margin-right: 0; } }
-  .sidebar__container .btn-add {
-    display: block;
-    width: 80%; }
-    @media (min-width: 768px) {
-      .sidebar__container .btn-add {
-        width: auto;
-        float: right; } }
-    .sidebar__container .btn-add:before {
-      content: "";
-      width: 0.8em;
-      height: 0.8em;
-      display: inline-block;
-      margin-right: .6em;
-      background: url(../img/icon-add.svg) no-repeat;
-      background-size: contain; }
   .open-sidebar .sidebar__container {
     right: 0; }
 
@@ -1700,6 +1685,25 @@ svg * {
     background-color: #f34730; }
   .btn:active, .btn:focus {
     background-color: #cc220b; }
+  .form .btn {
+    position: relative;
+    left: 25%;
+    margin-left: 20px; }
+  .btn-add {
+    display: block;
+    width: 80%; }
+    @media (min-width: 768px) {
+      .btn-add {
+        width: auto;
+        float: right; } }
+    .btn-add:before {
+      content: "";
+      width: 0.8em;
+      height: 0.8em;
+      display: inline-block;
+      margin-right: .6em;
+      background: url(../img/icon-add.svg) no-repeat;
+      background-size: contain; }
 
 .grid {
   margin: 0;
@@ -2121,7 +2125,3 @@ svg * {
         height: 40px; }
       .form-item .wrapper-input textarea {
         resize: vertical; }
-  .form .btn {
-    position: relative;
-    left: 25%;
-    margin-left: 20px; }
