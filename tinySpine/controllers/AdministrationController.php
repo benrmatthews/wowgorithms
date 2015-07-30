@@ -148,7 +148,23 @@ Class AdministrationController extends Controller{
 	}
 
 	public function brands(){
-		$this->set('brands', Brand::getAll());
+		if (!empty($_GET['s'])) {
+			switch ($_GET['s']) {
+				case 'submission':
+					$this->set('brands', Brand::getBrandByStatus(Brand::STATUS_SUBMITTED));
+					break;
+				case 'published':
+					$this->set('brands', Brand::getBrandByStatus(Brand::STATUS_PUBLISHED));
+					break;
+				case 'rejected':
+					$this->set('brands', Brand::getBrandByStatus(Brand::STATUS_REJECTED));
+					break;
+				default:
+					break;
+			}
+		} else {
+			$this->set('brands', Brand::getAll());		
+		}
 		$this->render('administration/brands');
 	}
 

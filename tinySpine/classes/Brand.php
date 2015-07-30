@@ -1,7 +1,7 @@
 <?php
 Class Brand{
 	
-	const STATUS_INVALID = 0;
+	const STATUS_SUBMITTED = 0;
 	const STATUS_PUBLISHED = 1;
 	const STATUS_REJECTED = 2;
 	
@@ -196,6 +196,13 @@ Class Brand{
 	static public function getAll(){
 		$query = new BrandQuery();
   		$query->setOrderBy(BrandQuery::ORDER_BY_NAME_ASC);
+	  	return $query->getBrands();
+	}
+
+	static public function getBrandByStatus($status) {
+		$query = new BrandQuery();
+		$query->setStatus($status);
+		$query->setOrderBy(BrandQuery::ORDER_BY_NAME_ASC);
 	  	return $query->getBrands();
 	}
 	

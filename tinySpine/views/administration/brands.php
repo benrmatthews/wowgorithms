@@ -7,11 +7,10 @@
     <nav class="subMenu">
       <div class="subMenu__wrapper">
         <ul class="nav">
-          <li class="active">
-            <a href="#">Submissions (10)</a>
-          </li>
-          <li><a href="#">All brands (74)</a></li>
-          <li><a href="#">Refused (200)</a></li>
+          <li <?php echo (empty($_GET['s'])) ? 'class="active"' : ''; ?>><a href="<?php echo BASEURL; ?>fgl_headquarter?action=brands">All brands (74)</a></li>
+          <li <?php echo ((!empty($_GET['s'])) && ($_GET['s'] == 'submission')) ? 'class="active"' : ''; ?>><a href="<?php echo BASEURL; ?>fgl_headquarter?action=brands&s=submission">Submissions (10)</a></li>
+          <li <?php echo ((!empty($_GET['s'])) && ($_GET['s'] == 'published')) ? 'class="active"' : ''; ?>><a href="<?php echo BASEURL; ?>fgl_headquarter?action=brands&s=published">Published (200)</a></li>
+          <li <?php echo ((!empty($_GET['s'])) && ($_GET['s'] == 'rejected')) ? 'class="active"' : ''; ?>><a href="<?php echo BASEURL; ?>fgl_headquarter?action=brands&s=rejected">Refused (20)</a></li>
         </ul>
       </div>
     </nav>
@@ -59,7 +58,7 @@
     </ul>
   </div>
 </main>
-
+<?php /* ?>
     <div class="container-fluid">
       <div class="page-header">
         <h1>Listing des marques</h1>
@@ -95,4 +94,4 @@
         </tr>
       <?php endforeach; ?>
       </table>
-      </div>
+      </div> */ ?>
