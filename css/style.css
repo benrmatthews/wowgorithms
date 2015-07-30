@@ -2070,7 +2070,7 @@ svg * {
     border-bottom: 1px solid #EDECE7;
     clear: both;
     width: 100%; }
-    .form-item:first-child {
+    .form-item-sep {
       border-bottom: 3px double #EDECE7;
       margin-bottom: 2em;
       padding-bottom: 2em; }

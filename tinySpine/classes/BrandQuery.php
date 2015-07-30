@@ -3,6 +3,8 @@ Class BrandQuery{
 	
 	const ORDER_BY_ID_DESC = 'brand.id DESC';
 	const ORDER_BY_ID_ASC = 'brand.id ASC';
+	const ORDER_BY_NAME_DESC = 'brand.name DESC';
+	const ORDER_BY_NAME_ASC = 'brand.name ASC';
 	const ORDER_BY_CLICKS_DESC = 'brand.clicksCount DESC';
 	const ORDER_BY_CLICKS_ASC = 'brand.clicksCount ASC';
 	
@@ -32,9 +34,11 @@ Class BrandQuery{
 		switch($orderBy){
 			case self::ORDER_BY_ID_DESC:
 			case self::ORDER_BY_ID_ASC:
+			case self::ORDER_BY_NAME_DESC:
+			case self::ORDER_BY_NAME_ASC:
 			case self::ORDER_BY_CLICKS_DESC:
 			case self::ORDER_BY_CLICKS_ASC:
-				$this->orderBy = (int)$orderBy;
+				$this->orderBy = $orderBy;
 				break;
 		}
 	}

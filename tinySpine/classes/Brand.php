@@ -195,7 +195,7 @@ Class Brand{
 
 	static public function getAll(){
 		$query = new BrandQuery();
-  		$query->setOrderBy(BrandQuery::ORDER_BY_ID_ASC);
+  		$query->setOrderBy(BrandQuery::ORDER_BY_NAME_ASC);
 	  	return $query->getBrands();
 	}
 	

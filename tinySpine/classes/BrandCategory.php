@@ -85,7 +85,7 @@ Class BrandCategory{
   	$query = new BrandQuery();
   	$query->setCategoryId($this->id);
   	$query->setStatus($status);
-  	$query->setOrderBy(BrandQuery::ORDER_BY_ID_ASC);
+  	$query->setOrderBy(BrandQuery::ORDER_BY_NAME_ASC);
   	$query->setLimit($limit);
   	$query->setOffset($offset);
   	return $query->getBrands();
