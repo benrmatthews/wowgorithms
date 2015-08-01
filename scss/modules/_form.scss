@@ -6,19 +6,27 @@
 		
 	}
 
+	&__title {
+		color: $maincolor;
+		text-transform: uppercase;
+		@include pxem(20px);
+		
+		~ .form__title {
+			margin-top: 4em;
+		}
+	}
+
 	&-item {
-		margin-bottom: 1em;
-		padding-bottom: 1em;
-		border-bottom: 1px solid #EDECE7;
+		
 		clear: both;
 		width: 100%;
-
-		&-sep {
-			border-bottom: 3px double #EDECE7;
-			margin-bottom: 2em;
-			padding-bottom: 2em;
-		}
 		
+		+ .form-item, + .form-submit {
+			border-top: 1px solid #EDECE7;
+			margin-top: 1em;
+			padding-top: 1em;
+		}
+
 		label, .wrapper-input {
 			display: block;
 		}

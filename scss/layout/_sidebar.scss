@@ -86,6 +86,11 @@
 		color: $maincolor;
 	}
 
+	&__author {
+		display: inline !important;
+		color: currentColor;
+	}
+
 	&__list {
 		list-style: none;
 		padding: 0;

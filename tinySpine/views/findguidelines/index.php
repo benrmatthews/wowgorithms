@@ -104,7 +104,7 @@ function roundNumber($number) {
                       </div>
                       <div class="log__text">
                       <?php if($log->typeMessage == 1) : ?>
-                        <span style="color:#<?= $log->brandColor ?>"><?= $log->brandName ?></span> added by <a href="#" target="_blank">[AUTHOR]</a>.
+                        <span style="color:#<?= $log->brandColor ?>"><?= $log->brandName ?></span> added by <a href="#" target="_blank" class="log__author" style="color: #<?= $log->brandColor ?>">@aqro</a>.
                       <?php else : ?>
                         <span style="color:#<?= $log->brandColor ?>"><?= $log->brandName ?></span> has been updated.
                       <?php endif; ?>
@@ -218,6 +218,7 @@ function roundNumber($number) {
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque sint quis tempora, veritatis aliquid culpa, cupiditate doloremque, magni corrupti vero officia numquam sapiente quaerat! Nisi soluta, corporis voluptatibus similique deserunt?</p>
       </header>
       <form class="form" method="post" enctype="multipart/form-data">
+        <h2 class="form__title">Your information</h2>
         <div class="form-item">
           <div class="form-wrapper-item">
             <div class="label-infos">
@@ -229,7 +230,7 @@ function roundNumber($number) {
             </div>
           </div>
         </div>
-        <div class="form-item form-item-sep">
+        <div class="form-item">
           <div class="form-wrapper-item">
             <div class="label-infos">
               <label for="twittername">Twitter name</label>
@@ -240,6 +241,7 @@ function roundNumber($number) {
             </div>
           </div>
         </div>
+        <h2 class="form__title">Brand information</h2>
         <div class="form-item">
           <div class="form-wrapper-item">
             <div class="label-infos">

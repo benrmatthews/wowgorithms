@@ -96,9 +96,9 @@
           </div>
           <div class="wrapper-input">
             <select name="status" id="status">
-              <option value="<?php echo Brand::STATUS_INVALID ?>"<?php if($brand->status == Brand::STATUS_INVALID) echo 'selected="selected"'?>>Invalide</option>
-              <option value="<?php echo Brand::STATUS_PUBLISHED; ?>"<?php if($brand->status == Brand::STATUS_PUBLISHED) echo 'selected="selected"'?>>Publiée</option>
-              <option value="<?php echo Brand::STATUS_REJECTED ?>"<?php if($brand->status == Brand::STATUS_REJECTED) echo 'selected="selected"'?>>Rejetée</option>
+              <option value="<?php echo Brand::STATUS_SUBMITTED ?>"<?php if($brand->status == Brand::STATUS_SUBMITTED) echo 'selected="selected"'?>>Submitted</option>
+              <option value="<?php echo Brand::STATUS_PUBLISHED; ?>"<?php if($brand->status == Brand::STATUS_PUBLISHED) echo 'selected="selected"'?>>Published</option>
+              <option value="<?php echo Brand::STATUS_REJECTED ?>"<?php if($brand->status == Brand::STATUS_REJECTED) echo 'selected="selected"'?>>Rejected</option>
             </select>
           </div>
         </div>
