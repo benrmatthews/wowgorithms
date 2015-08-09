@@ -198,9 +198,11 @@ function roundNumber($number) {
 <div class="mainfooter__wrapper">
     <footer class="mainfooter">
         <div class="mainfooter__container">
-            <p class="copyright">
-                Made by <a href="https://twitter.com/aqro" target="_blank">Arno Di Nunzio</a>
-            </p>
+          <ul class="list-inline">
+            <li class="list-inline-item">Made by <a href="https://twitter.com/aqro" target="_blank">Arno Di Nunzio</a></li>
+            <li class="list-inline-item"><a href="#">Help</a></li>
+            <li class="list-inline-item"><a href="#">Contact</a></li>
+          </ul>
             <div class="share-module">
                 <div class="tw-btn"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://findguidelin.es/" data-via="aqro">Tweet</a></div>
                 <div class="fb-like" data-href="http://findguidelin.es/" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false"></div>

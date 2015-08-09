@@ -1649,29 +1649,51 @@ svg * {
 .mainfooter {
   background-color: #fffef7; }
   .mainfooter__wrapper {
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%; }
+    @media (min-width: 768px) {
+      .mainfooter__wrapper {
+        position: fixed; } }
   .mainfooter__container {
     border-top: 1px solid #EDECE7;
     padding-top: 1em;
-    padding-bottom: 1em; }
-  .mainfooter .copyright {
-    float: left;
+    padding-bottom: 1em;
+    text-align: center; }
+    @media (min-width: 768px) {
+      .mainfooter__container {
+        text-align: left; } }
+  .mainfooter .list-inline {
+    list-style: none;
     margin: 0;
-    text-transform: uppercase;
-    font-size: 0.75em;
-    color: #B7B6B2; }
-    .mainfooter .copyright a {
-      color: #453C55;
-      border-bottom: 1px solid transparent;
-      -webkit-transition: border-color 0.3s ease;
-      -o-transition: border-color 0.3s ease;
-      transition: border-color 0.3s ease; }
-      .mainfooter .copyright a:hover {
-        text-decoration: none;
-        border-bottom: 1px solid; }
+    padding: 1em 0; }
+    @media (min-width: 768px) {
+      .mainfooter .list-inline {
+        float: left;
+        padding: 0; } }
+    .mainfooter .list-inline-item {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.75em;
+      color: #B7B6B2; }
+      .mainfooter .list-inline-item a {
+        color: #453C55;
+        border-bottom: 1px solid transparent;
+        -webkit-transition: border-color 0.3s ease;
+        -o-transition: border-color 0.3s ease;
+        transition: border-color 0.3s ease; }
+        .mainfooter .list-inline-item a:hover {
+          text-decoration: none;
+          border-bottom: 1px solid; }
+      .mainfooter .list-inline-item + .list-inline-item {
+        padding-left: .5em; }
+        .mainfooter .list-inline-item + .list-inline-item:before {
+          content: ".";
+          padding-right: .8em;
+          display: inline-block;
+          position: relative;
+          top: -.25em; }
 
 .btn {
   background-color: #F23218;
@@ -1868,7 +1890,10 @@ svg * {
   margin-top: 1em; }
 
 .share-module {
-  float: right; }
+  display: inline-block; }
+  @media (min-width: 768px) {
+    .share-module {
+      float: right; } }
   .share-module > div {
     float: left;
     margin-left: 1em; }

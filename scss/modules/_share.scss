@@ -1,5 +1,9 @@
 .share-module {
-	float: right;
+	display: inline-block;
+	@media (min-width: $screen-sm) {
+		
+		float: right;
+	}
 
 	> div {
 		float: left;

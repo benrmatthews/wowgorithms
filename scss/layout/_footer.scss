@@ -4,11 +4,14 @@
 	
 
 	&__wrapper {
-		position: fixed;
+		position: relative;
 		bottom: 0;
 		left: 0;
 		width: 100%;
 		
+		@media (min-width: $screen-sm) {
+			position: fixed;
+		}
 	}
 
 	&__container {
@@ -16,23 +19,50 @@
 		padding-top: 1em;
 		padding-bottom: 1em;
 		@extend .clearfix;
+		text-align: center;
+
+		@media (min-width: $screen-sm) {
+			text-align: left;
+		}
 	}
 
-	.copyright {
-		float: left;
+	.list-inline {
+		list-style: none;
 		margin: 0;
-		text-transform: uppercase;
-		@include pxem(12px);
-		color: #B7B6B2;
+		padding: 1em 0;
 
-		a {
-			color: $text-color;
-			border-bottom: 1px solid transparent;
-			@include transition(border-color .3s ease);
+		@media (min-width: $screen-sm) {
+			float: left;
+			padding: 0;
+		}
 
-			&:hover {
-				text-decoration: none;
-				border-bottom: 1px solid;
+		&-item {
+			display: inline-block;
+			text-transform: uppercase;
+			@include pxem(12px);
+			color: #B7B6B2;
+
+			a {
+				color: $text-color;
+				border-bottom: 1px solid transparent;
+				@include transition(border-color .3s ease);
+
+				&:hover {
+					text-decoration: none;
+					border-bottom: 1px solid;
+				}
+			}
+
+			+ .list-inline-item {
+				padding-left: .5em;
+
+				&:before {
+					content:".";
+					padding-right: .8em;
+					display: inline-block;
+					position: relative;
+					top: -.25em;
+				}
 			}
 		}
 	}
