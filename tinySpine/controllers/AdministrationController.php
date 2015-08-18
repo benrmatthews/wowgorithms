@@ -12,7 +12,7 @@ Class AdministrationController extends Controller{
 			$this->set('module', 'Administration');
 			$this->set('action', $action);
 			$this->render('administration/display');
-		}else if($_GET['action'] == 'login'){
+		}else if(!empty($_GET['action']) && $_GET['action'] == 'login'){
 			$this->login();
 		}else{
 			$this->redirect($this->getLoginUrl());
