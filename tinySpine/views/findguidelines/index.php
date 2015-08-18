@@ -201,7 +201,7 @@ function roundNumber($number) {
           <ul class="list-inline">
             <li class="list-inline-item">Made by <a href="https://twitter.com/aqro" target="_blank">Arno Di Nunzio</a></li>
             <li class="list-inline-item"><a href="#">Help</a></li>
-            <li class="list-inline-item"><a href="#">Contact</a></li>
+            <li class="list-inline-item"><a href="mailto:hello@findguidelin.es">Contact</a></li>
           </ul>
             <div class="share-module">
                 <div class="tw-btn"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://findguidelin.es/" data-via="aqro">Tweet</a></div>
