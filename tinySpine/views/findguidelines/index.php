@@ -199,7 +199,7 @@ function roundNumber($number) {
     <footer class="mainfooter">
         <div class="mainfooter__container">
           <ul class="list-inline">
-            <li class="list-inline-item">Made by <a href="https://twitter.com/aqro" target="_blank">Arno Di Nunzio</a></li>
+            <li class="list-inline-item">Made by <a href="https://twitter.com/aqro" target="_blank">Arno Di Nunzio</a> & <a href="https://twitter.com/Garith" target="_blank">François Therasse</a></li>
             <li class="list-inline-item"><a href="#">Help</a></li>
             <li class="list-inline-item"><a href="mailto:hello@findguidelin.es">Contact</a></li>
           </ul>
