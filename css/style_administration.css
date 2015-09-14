@@ -1318,9 +1318,6 @@ hr {
 svg * {
   fill: inherit; }
 
-html {
-  background-color: #F23218; }
-
 .centered, .mainheader, .maincontent, .mainfooter {
   max-width: 1200px;
   margin: 0 auto; }
