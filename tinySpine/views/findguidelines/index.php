@@ -222,8 +222,8 @@ function roundNumber($number) {
         <ol>
           <li>Name of the brand</li>
           <li>URL of the brand's assets
-          <em>This link must contain at least a downloadable version of the logo and must be a web page (not a PDF). </em></li>
-          <li>Brand's logo in SVG (I can't accept any other format)</li>
+          <em>This link must contain at least a downloadable version of the logo and must be a web page (not a PDF).</em></li>
+          <li>Brand's logo in SVG format</li>
         </ol>
         <a href="mailto:hello@findguidelin.es" class="btn btn-long"><span>Send to</span> hello@findguidelin.es</a>
       </section>
