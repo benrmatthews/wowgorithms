@@ -218,7 +218,7 @@ function roundNumber($number) {
         <h1 class="modal__title">Add a guideline</h1>
       </header>
       <section class="modal__content">
-        <p>Hey friends, do you wanna add a guideline ? No problemo, just send me some information and I'll do the rest:</p>
+        <p>Hey friend, do you wanna add a guideline ? Not a problem, just send me some information and I'll do the rest:</p>
         <ol>
           <li>Name of the brand</li>
           <li>URL of the brand's assets
