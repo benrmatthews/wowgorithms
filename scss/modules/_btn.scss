@@ -27,6 +27,16 @@
 		margin-left: $grid-gutter-width/4;
 	}
 
+	&-long {
+		span {
+			display: none;
+
+			@media (min-width: $screen-sm) {
+				display: inline-block;
+			}
+		}
+	}
+
 	&-add {
 		display: block;
 		width: 80%;

@@ -1639,6 +1639,11 @@ svg * {
     position: relative;
     left: 25%;
     margin-left: 10px; }
+  .btn-long span {
+    display: none; }
+    @media (min-width: 768px) {
+      .btn-long span {
+        display: inline-block; } }
   .btn-add {
     display: block;
     width: 80%; }
@@ -1911,6 +1916,12 @@ svg * {
     @media (min-width: 768px) {
       .modal__container {
         padding: 3em; } }
+    .modal__container ul, .modal__container ol {
+      margin-bottom: 3em; }
+      .modal__container ul li, .modal__container ol li {
+        opacity: .7; }
+        .modal__container ul li em, .modal__container ol li em {
+          display: block; }
   .modal__header {
     padding-top: 3em; }
     @media (min-width: 768px) {

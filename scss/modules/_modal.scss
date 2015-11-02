@@ -58,6 +58,18 @@
 			padding: 3em;
 
 		}
+
+		ul, ol {
+			margin-bottom: 3em;
+
+			li {
+				opacity: .7;
+
+				em {
+					display: block;
+				}
+			}
+		}
 	}
 
 	&__header {

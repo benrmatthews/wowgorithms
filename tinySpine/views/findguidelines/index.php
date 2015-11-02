@@ -200,7 +200,6 @@ function roundNumber($number) {
         <div class="mainfooter__container">
           <ul class="list-inline">
             <li class="list-inline-item">Made by <a href="https://twitter.com/aqro" target="_blank">Arno Di Nunzio</a> & <a href="https://twitter.com/Garith" target="_blank">François Therasse</a></li>
-            <li class="list-inline-item"><a href="#">Help</a></li>
             <li class="list-inline-item"><a href="mailto:hello@findguidelin.es">Contact</a></li>
           </ul>
             <div class="share-module">
@@ -217,118 +216,17 @@ function roundNumber($number) {
     <div class="modal__container">
       <header class="modal__header">
         <h1 class="modal__title">Add a guideline</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque sint quis tempora, veritatis aliquid culpa, cupiditate doloremque, magni corrupti vero officia numquam sapiente quaerat! Nisi soluta, corporis voluptatibus similique deserunt?</p>
       </header>
-      <form class="form" method="post" enctype="multipart/form-data">
-        <h2 class="form__title">Your information</h2>
-        <div class="form-item">
-          <div class="form-wrapper-item">
-            <div class="label-infos">
-              <label for="email">Your email*</label>
-              <p>You'll receive a confirmation email with all the informations you gave.</p>
-            </div>
-            <div class="wrapper-input">
-              <input type="email" name="email" id="email">
-            </div>
-          </div>
-        </div>
-        <div class="form-item">
-          <div class="form-wrapper-item">
-            <div class="label-infos">
-              <label for="twittername">Twitter name</label>
-              <p>Just to be added in the log part. It's not required.</p>
-            </div>
-            <div class="wrapper-input">
-              <input type="text" name="twittername" id="twittername">
-            </div>
-          </div>
-        </div>
-        <h2 class="form__title">Brand information</h2>
-        <div class="form-item">
-          <div class="form-wrapper-item">
-            <div class="label-infos">
-              <label for="name">Brand name*</label>
-            </div>
-            <div class="wrapper-input">
-              <input type="text" name="name" id="name">
-            </div>
-          </div>
-        </div>
-        <div class="form-item">
-          <div class="form-wrapper-item">
-            <div class="label-infos">
-              <label for="url">Brand URL*</label>
-            </div>
-            <div class="wrapper-input">
-              <input type="text" name="url" id="url">
-            </div>
-          </div>
-        </div>
-        <div class="form-item">
-          <div class="form-wrapper-item">
-            <div class="label-infos">
-              <label for="brandColor">Brand color*</label>
-              <p>Must be hexadecimal</p>
-            </div>
-            <div class="wrapper-input">
-              <input type="text" name="brandColor" id="brandColor">
-            </div>
-          </div>
-        </div>
-        <div class="form-item">
-          <div class="form-wrapper-item">
-            <div class="label-infos">
-              <label for="category">Brand's category*</label>
-            </div>
-            <div class="wrapper-input">
-              <select name="category" id="category">
-              <option value="" selected="selected">Aucune</option>
-                <?php foreach($categories as $category): ?>
-                  <option value="<?php echo $category->getId(); ?>"><?php echo $category->name; ?></option>
-                <?php endforeach; ?>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="form-item">
-          <div class="form-wrapper-item">
-            <div class="label-infos">
-              <label for="logo">Brand's logo*</label>
-              <p>It has to be a SVG monochromia.</p>
-            </div>
-            <div class="wrapper-input">
-              <input type="file">
-            </div>
-          </div>
-        </div>
-        <div class="form-item">
-          <div class="form-wrapper-item">
-            <div class="label-infos">
-              <label for="tags">Tags</label>
-              <p>Separated by commas</p>
-            </div>
-            <div class="wrapper-input">
-              <textarea name="tags" id="tags" rows="5"></textarea>
-            </div>
-          </div>
-        </div>
-        <div class="form-item">
-          <div class="form-wrapper-item">
-            <div class="label-infos">
-              <label for="recaptcha">Captcha</label>
-            </div>
-            <div class="wrapper-input">
-              <div class="g-recaptcha" data-sitekey="6LfgPgoTAAAAAKveISVB3ZEWSO_3QGALby9kzyBo"></div>
-            </div>
-          </div>
-        </div>
-        <div class="form-submit">
-          <div class="form-wrapper-submit">
-            <button type="submit" class="btn">Submit guideline</button>
-          </div>
-        </div>
-      </form>
-      <small>* These fields are required.</small>
+      <section class="modal__content">
+        <p>Hey friends, do you wanna add a guideline ? No problemo, just send me some information and I'll do the rest:</p>
+        <ol>
+          <li>Name of the brand</li>
+          <li>URL of the brand's assets
+          <em>This link must contain at least a downloadable version of the logo and must be a web page (not a PDF). </em></li>
+          <li>Brand's logo in SVG (I can't accept any other format)</li>
+        </ol>
+        <a href="mailto:hello@findguidelin.es" class="btn btn-long"><span>Send to</span> hello@findguidelin.es</a>
+      </section>
       <div class="close"></div>
     </div>
   </div>
