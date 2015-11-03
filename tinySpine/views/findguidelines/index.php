@@ -40,9 +40,16 @@ function roundNumber($number) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Find Guidelines - The fastest way to brand assets.</title>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
-  <meta name="description" content="Find guidelines on the web. The fastest way to brand assets.">
-  <meta property="og:title" content="Find guidelines on the web. The fastest way to brand assets." />
-  <meta property="og:site_name" content="Find guidelines on the web. The fastest way to brand assets." />
+  <meta name="description" content="Find guidelines, the fastest way to brand assets.">
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Find guidelines">
+  <meta name="twitter:description" content="Find guidelines, the fastest way to brand assets.">
+  <meta name="twitter:creator" content="@aqro">
+  <meta name="twitter:image" content="http://www.example.com/image.jpg">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="Find guidelines" />
+  <meta property="og:site_name" content="Find guidelines, the fastest way to brand assets." />
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="http://findguidelin.es/" />
   <meta property="og:description" content="The fastest way to brand assets." />
