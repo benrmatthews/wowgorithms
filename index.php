@@ -30,6 +30,5 @@ try{
 		}
 	}
 }catch(Exception $e){
-	var_dump($e);
 	echo 'Oups! Something do not work... :(';
 }
