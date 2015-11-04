@@ -111,7 +111,7 @@ function roundNumber($number) {
                       </div>
                       <div class="log__text">
                       <?php if($log->typeMessage == 1) : ?>
-                        <span style="color:#<?= $log->brandColor ?>"><?= $log->brandName ?></span> added by <a href="#" target="_blank" class="log__author" style="color: #<?= $log->brandColor ?>">@aqro</a>.
+                        <span style="color:#<?= $log->brandColor ?>"><?= $log->brandName ?></span> added by <a href="https://twitter.com/aqro" target="_blank" class="log__author" style="color: #<?= $log->brandColor ?>">@aqro</a>.
                       <?php else : ?>
                         <span style="color:#<?= $log->brandColor ?>"><?= $log->brandName ?></span> has been updated.
                       <?php endif; ?>
