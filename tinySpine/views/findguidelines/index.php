@@ -46,14 +46,14 @@ function roundNumber($number) {
   <meta name="twitter:title" content="Find guidelines">
   <meta name="twitter:description" content="Find guidelines, the fastest way to brand assets.">
   <meta name="twitter:creator" content="@aqro">
-  <meta name="twitter:image" content="http://www.example.com/image.jpg">
+  <meta name="twitter:image" content="http://findguidelin.es/img/fgl-share-image.png">
   <!-- Open Graph Data -->
   <meta property="og:title" content="Find guidelines" />
   <meta property="og:site_name" content="Find guidelines, the fastest way to brand assets." />
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="http://findguidelin.es/" />
   <meta property="og:description" content="The fastest way to brand assets." />
-  <meta property="og:image" content="http://findguidelin.es/img/guidelinesweb.png" />
+  <meta property="og:image" content="http://findguidelin.es/img/fgl-share-image.png" />
   <link rel="icon" href="http://findguidelin.es/img/favicon.ico" />
   <link rel="stylesheet" href="<?php echo BASEURL; ?>css/style.css">
   <script src="<?php echo BASEURL; ?>js/modernizr.js"></script>
