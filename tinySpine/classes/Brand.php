@@ -30,7 +30,7 @@ Class Brand{
 
 	public function withId($id){
 		$pdo = DataSource::load();
-		$statement = 'SELECT brand.*, category.name AS categoryName FROM Brand
+		$statement = 'SELECT brand.*, category.name AS categoryName FROM brand
 		LEFT JOIN category ON brand.category = category.id
 		WHERE deleted = 0 AND brand.id = :id
 		LIMIT 1';
@@ -45,7 +45,7 @@ Class Brand{
 	
 	public function withSlug($slug){
 		$pdo = DataSource::load();
-		$statement = 'SELECT brand.*, category.name AS categoryName FROM Brand
+		$statement = 'SELECT brand.*, category.name AS categoryName FROM brand
 		LEFT JOIN category ON brand.category = category.id
 		WHERE deleted = 0 AND brand.slug = :slug
 		LIMIT 1';
