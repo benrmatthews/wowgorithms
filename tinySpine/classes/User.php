@@ -27,7 +27,7 @@ Class User{
 
 	static function connect($login, $password){
 		$pdo = DataSource::load();
-		$statement = 'SELECT * FROM User WHERE login = :login LIMIT 1';
+		$statement = 'SELECT * FROM user WHERE login = :login LIMIT 1';
 		$preparedStatement = $pdo->prepare($statement);
 		$preparedStatement->execute(array('login' => $login));
 		$userData = $preparedStatement->fetch();
@@ -55,7 +55,7 @@ Class User{
 			return self::$user;
 		}elseif(!empty($_SESSION[self::SESSION_KEY])){
 			$pdo = DataSource::load();
-			$statement = 'SELECT * FROM User WHERE secret = :secret LIMIT 1';
+			$statement = 'SELECT * FROM user WHERE secret = :secret LIMIT 1';
 			$preparedStatement = $pdo->prepare($statement);
 			$preparedStatement->execute(array('secret' => $_SESSION[self::SESSION_KEY]));
 			$userData = $preparedStatement->fetch();
@@ -77,7 +77,7 @@ Class User{
 
 	public function withId($id){
 		$pdo = DataSource::load();
-		$statement = 'SELECT * FROM User WHERE id = :id LIMIT 1';
+		$statement = 'SELECT * FROM user WHERE id = :id LIMIT 1';
 		$preparedStatement = $pdo->prepare($statement);
 		$preparedStatement->execute(array('id' => $id));
 		$userData = $preparedStatement->fetch();
