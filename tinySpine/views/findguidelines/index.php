@@ -180,7 +180,7 @@ function roundNumber($number) {
             </div>
             <div class="grid__block-infos" style="border-color: rgba(<?= hex2rgb("#".$brand->brandColor) ?>, .19)">
                 <header>
-                <h2 class="grid__block-title"><a href="<?= BASEURL.$brand->slug ?>" target="_blank"><?= $brand->name ?></a></h2>
+                <h2 class="grid__block-title" <?= ($brand->borderColor!="") ? "style='color: #".$brand->borderColor."'" : "" ?>><a href="<?= BASEURL.$brand->slug ?>" target="_blank"><?= $brand->name ?></a></h2>
                 <div class="views">
                     <?php if ($brand->clicksCount) { 
                       echo roundNumber($brand->clicksCount); } else { echo "0"; } ?></div>

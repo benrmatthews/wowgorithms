@@ -34,7 +34,7 @@
             </div>
             <div class="grid__block-infos" style="border-color: rgba(<?= hex2rgb("#".$brand->brandColor) ?>, .19)">
                 <header>
-                <h2 class="grid__block-title"><?= $brand->name ?></h2>
+                <h2 class="grid__block-title" <?= ($brand->borderColor!="") ? "style='color: #".$brand->borderColor."'" : "" ?>><?= $brand->name ?></h2>
                 <div class="url-wrapper">
                   <a href="<?= $brand->url ?>" target="_blank" title="<?= $brand->url ?>" class="url">URL</a>
                 </div>
